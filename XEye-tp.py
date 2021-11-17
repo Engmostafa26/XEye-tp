@@ -57,7 +57,7 @@ def tp_conf():
     Auto_check = re.search(r"Mode:Auto", str(iwco))
     if not Auto_check:
         print("\n [Warning] --> the wlan interface mode is not Auto, ")
-        print(" [Instruction] --> Restart you machine and try again  \n")
+        print(" [Instruction] --> UnPlug and plug in your Wireless USB then try again  \n")
         exit()
     if Auto_check.group(0) == 'Mode:Auto':
         print("\n [Congrats] --> The wlan interface mode is currently Auto \n")
