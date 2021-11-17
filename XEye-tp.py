@@ -10,12 +10,12 @@ def Checkexis():
     if chwlan:
         usermd()
     else:
-        print("\n [Warning] --> Please make sure that the Wifi USB is plugged in, Exiting...... ")
+        print("\n [Warning] --> Please make sure that the Wifi USB is plugged in, Exiting ...... ")
         exit()
 
 def usermd():
     print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" usb model \"TL-WN722N\" wireless to monitor mode")
-    sque= input("\n [Permission] --> Would you like to proceed: ")
+    sque= input("\n [Permission] --> Would you like to proceed? ")
     if sque.lower() == 'y' or sque.lower() == 'yes':
         tp_conf()
     elif sque.lower() == 'n' or sque.lower() == 'no':
@@ -79,7 +79,7 @@ def tp_set():
         print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert")
         exit()
     else:
-        print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting....")
+        print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
         exit()
 def tp_check():
     iwcon = subprocess.check_output(['iwconfig'])
