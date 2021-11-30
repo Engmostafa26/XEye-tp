@@ -7,7 +7,10 @@ import re
 def Checkexis():
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"Link Quality", str(ifconfig_outp))
-    if chwlan:
+    chwlann = re.search(r"Mode:Auto", str(iwco))
+    if chwlann:
+        tp_set()
+    elif chwlan:
         usermd()
     else:
         print("\n [Warning] --> Please make sure that the Wifi USB is plugged in, Exiting ...... ")
