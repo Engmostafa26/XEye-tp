@@ -71,7 +71,7 @@ def tp_conf():
         tp_set()
         
 def tp_set():
-    asking = input(" [Permission] --> Would you like to change your wireless interface to Monitor mode now? [yes / no] ")
+    asking = input(" [Permission] --> Your wirelss adapter is currently set to Auto mode, Would you like to set it to Monitor mode now? [yes / no] ")
     if asking.lower() == 'y' or asking.lower() == 'yes':
         interfs = subprocess.check_output('iwconfig')
         interf = re.search(r"\w\w\w\w\d", str(interfs))
