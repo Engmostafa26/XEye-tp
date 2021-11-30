@@ -7,7 +7,7 @@ import re
 def Checkexis():
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"Link Quality", str(ifconfig_outp))
-    chwlann = re.search(r"Mode:Auto", str(iwco))
+    chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
     if chwlann:
         tp_set()
     elif chwlan:
