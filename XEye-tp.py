@@ -8,7 +8,11 @@ def Checkexis():
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"Link Quality", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
-    if chwlann:
+    chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
+    if chwlannn:
+        print("\n [Info] --> Wifi USB adapter is already set to Monitor mode, Exiting ...... ")
+        exit()
+    elif chwlann:
         tp_set()
     elif chwlan:
         usermd()
