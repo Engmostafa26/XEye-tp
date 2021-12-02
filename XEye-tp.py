@@ -14,7 +14,14 @@ def Checkexis():
         print("\n [Info] --> Wifi USB adapter is already set to Monitor mode, Exiting ...... ")
         exit()
     elif chwlann:
-        tp_set()
+       asking = input("\n [Permission] --> Would you like to set your Wifi USB adapter to Monitor now or start over?  [Monitor / Start over] ")
+        if asking.lower() == 'monitor':
+            tp_set()
+        elif asking.lower() == 'start over':
+           tp_conf()
+        else:
+            print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
+            exit()
     elif chwlan:
         usermd()
     else:
@@ -68,11 +75,17 @@ def tp_conf():
         exit()
     if Auto_check.group(0) == 'Mode:Auto':
         print("\n [Congrats] --> The wlan interface mode is currently Auto \n")
-        tp_set()
-        
+        asking = input("\n [Permission] --> Would you like to set your Wifi USB adapter to Monitor mode now?  [yes / no] ")
+        if asking.lower() == 'y' or asking.lower() == 'yes':
+            tp_set()
+        elif asking.lower() == 'n' or asking.lower() == 'no':
+            print("\n [Info] --> Now your wireless interface is just set to Auto,  Bye Bye :) \n")
+            print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert")
+            exit()
+        else:
+            print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
+            exit()
 def tp_set():
-    asking = input(" [Permission] --> Your wirelss adapter is currently set to Auto mode, Would you like to set it to Monitor mode now? [yes / no] ")
-    if asking.lower() == 'y' or asking.lower() == 'yes':
         interfs = subprocess.check_output('iwconfig')
         interf = re.search(r"\w\w\w\w\d", str(interfs))
         interf = interf.group(0)
@@ -81,13 +94,6 @@ def tp_set():
         subprocess.call(['sudo', 'iwconfig', interf, 'mode', 'monitor'])
         subprocess.call(['sudo', 'ifconfig', interf, 'up'])
         tp_check()
-    elif asking.lower() == 'n' or asking.lower() == 'no':
-        print("\n [Info] --> Now your wireless interface is just set to Auto,  Bye Bye :) \n")
-        print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert")
-        exit()
-    else:
-        print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
-        exit()
 def tp_check():
     iwcon = subprocess.check_output(['iwconfig'])
     iwcon_Mcheck = re.search(r"Monitor",str(iwcon))
