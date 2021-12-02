@@ -3,8 +3,15 @@
 import subprocess
 import os
 import re
-
+print("\n       :::    :::       ::::::::::    :::   :::       :::::::::: 
+     :+:    :+:       :+:           :+:   :+:       :+:         
+     +:+  +:+        +:+            +:+ +:+        +:+          
+     +#++:+         +#++:++#        +#++:         +#++:++#      
+   +#+  +#+        +#+              +#+          +#+            
+ #+#    #+#       #+#              #+#          #+#             
+###    ###       ##########       ###          ########## ")
 def Checkexis():
+    print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" usb model \"TL-WN722N\" wireless to monitor mode")
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"Link Quality", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
@@ -21,7 +28,6 @@ def Checkexis():
         exit()
 
 def usermd():
-    print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" usb model \"TL-WN722N\" wireless to monitor mode")
     sque= input("\n [Permission] --> Would you like to proceed? ")
     if sque.lower() == 'y' or sque.lower() == 'yes':
         tp_conf()
