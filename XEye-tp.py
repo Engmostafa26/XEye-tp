@@ -5,7 +5,7 @@ import os
 import re
 
 def Checkexis():
-    print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" usb model \"TL-WN722N\" wireless to monitor mode \n\n")
+    print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" usb model \"TL-WN722N\" wireless to monitor mode [*] \n\n")
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"Link Quality", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
@@ -14,6 +14,7 @@ def Checkexis():
         print("\n [Info] --> Wifi USB adapter is already set to Monitor mode, Exiting ...... ")
         exit()
     elif chwlann:
+       print("\n [Info] --> You Wireless USB adapter is already set to Auto mode \n")
        asking = input("\n [Permission] --> Would you like to set your Wifi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
        if asking.lower() == 'set':
             tp_set()
