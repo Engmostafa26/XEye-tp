@@ -14,7 +14,7 @@ def Checkexis():
         print("\n [Info] --> You Wifi USB adapter is already set to Monitor mode, Exiting ...... ")
         exit()
     elif chwlann:
-       print("\n [Info] --> Your Wifi USB adapter is already set to Auto mode \n")
+       print("\n [Info] --> Your Wifi USB adapter is already set to Auto mode ")
        asking = input(" [Permission] --> Would you like to set your Wifi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
        if asking.lower() == 'set':
             tp_set()
