@@ -71,11 +71,11 @@ def tp_conf():
     iwco = subprocess.check_output(['iwconfig'])
     Auto_check = re.search(r"Mode:Auto", str(iwco))
     if not Auto_check:
-        print("\n [Warning] --> the wlan interface mode is not Auto, ")
-        print(" [Instruction] --> UnPlug and plug in your Wireless USB then try again  \n")
+        print("\n [Warning] --> The Wifi adapter mode is not Auto or it is just missing. ")
+        print(" [Instruction] --> UnPlug and plug in your Wifi USB adapter then try again  \n")
         exit()
     if Auto_check.group(0) == 'Mode:Auto':
-        print("\n [Congrats] --> The wlan interface mode is currently Auto \n")
+        print("\n [Congrats] --> The Wifi USB adapter is successfully configured \n")
         asking = input("\n [Permission] --> Would you like to set your Wifi USB adapter to Monitor mode now?  [yes / no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             tp_set()
