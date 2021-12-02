@@ -19,7 +19,7 @@ def Checkexis():
             tp_set()
        elif asking.lower() == 'reconf':
             tp_conf()
-        else:
+       else:
             print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
             exit()
     elif chwlan:
