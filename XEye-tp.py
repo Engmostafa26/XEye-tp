@@ -5,7 +5,7 @@ import os
 import re
 
 def Checkexis():
-    print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" usb model \"TL-WN722N\" wireless to monitor mode")
+    print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" usb model \"TL-WN722N\" wireless to monitor mode \n\n")
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"Link Quality", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
