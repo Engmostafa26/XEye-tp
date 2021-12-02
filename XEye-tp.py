@@ -15,7 +15,7 @@ def Checkexis():
         exit()
     elif chwlann:
        asking = input("\n [Permission] --> Would you like to set your Wifi USB adapter to Monitor now or start over?  [Monitor / Start over] ")
-        if asking.lower() == 'monitor':
+       if asking.lower() == 'monitor':
             tp_set()
         elif asking.lower() == 'start over':
            tp_conf()
