@@ -90,7 +90,7 @@ def tp_set():
         interfs = subprocess.check_output('iwconfig')
         interf = re.search(r"\w\w\w\w\d", str(interfs))
         interff = re.search(r"\w\w\w\d", str(interfs))
-        Interff = r.search(r"Link Quality", str(interfs))
+        Interff = re.search(r"Link Quality", str(interfs))
         if interf:
             interf = interf.group(0)
         elif interff and Interff:
