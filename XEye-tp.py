@@ -90,7 +90,7 @@ def tp_set():
         interfs = subprocess.check_output('iwconfig')
         interf = re.search(r"\w\w\w\w\d", str(interfs))
         interff = re.search(r"\w\w\w\d", str(interfs))
-        print(interff.group(0))
+        #print(interff.group(0))
         Interff = re.search(r"WIFI@REALTEK", str(interfs))
         if interf:
             interf = interf.group(0)
