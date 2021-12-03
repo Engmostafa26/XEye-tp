@@ -90,10 +90,11 @@ def tp_set():
         interfs = subprocess.check_output('iwconfig')
         interf = re.search(r"\w\w\w\w\d", str(interfs))
         interff = re.search(r"\w\w\w\d", str(interfs))
+        Interff = r.search(r"Link Quality", str(interfs))
         if interf:
             interf = interf.group(0)
-        elif interff:
-            interf = interff.group(0)
+        elif interff and Interff:
+            interf = interff.group(1)
         subprocess.call(['sudo', 'ifconfig', interf, 'down'])
         subprocess.call("sudo airmon-ng check kill", shell=True)
         subprocess.call(['sudo', 'iwconfig', interf, 'mode', 'monitor'])
