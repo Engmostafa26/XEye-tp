@@ -94,7 +94,7 @@ def tp_set():
         if interf:
             interf = interf.group(0)
         elif interff and Interff:
-            interf = interff.group(1)
+            interf = interff.group(0)
         subprocess.call(['sudo', 'ifconfig', interf, 'down'])
         subprocess.call("sudo airmon-ng check kill", shell=True)
         subprocess.call(['sudo', 'iwconfig', interf, 'mode', 'monitor'])
