@@ -7,7 +7,7 @@ import re
 def Checkexis():
     print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" model \"TL-WN722N\" Wifi USB adapter to Monitor mode :):):) \n\n")
     ifconfig_outp = subprocess.check_output('iwconfig')
-    chwlan = re.search(r"Link Quality", str(ifconfig_outp))
+    chwlan = re.search(r"WIFI@REALTEK", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
     chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
     if chwlannn:
@@ -90,7 +90,7 @@ def tp_set():
         interfs = subprocess.check_output('iwconfig')
         interf = re.search(r"\w\w\w\w\d", str(interfs))
         interff = re.search(r"\w\w\w\d", str(interfs))
-        Interff = re.search(r"Link Quality", str(interfs))
+        Interff = re.search(r"WIFI@REALTEK", str(interfs))
         if interf:
             interf = interf.group(0)
         elif interff and Interff:
