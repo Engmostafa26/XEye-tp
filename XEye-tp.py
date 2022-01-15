@@ -51,7 +51,7 @@ def tp_conf():
     print("\n [*] --> Installing libelf-dev, Please wait ....  \n")
     subprocess.call(['sudo', 'apt', 'install', 'libelf-dev', '-y'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing the required linux-headers, Please wait .....  \n")
-    subprocess.call(['sudo', 'apt-get', 'install', 'linux-headers-`uname', '-r\''], stdout=subprocess.DEVNULL)
+    subprocess.call("sudo apt-get install linux-headers-uname -r", shell=True)
     print("\n [*] --> Removing \"r8188eu.ko module\"  \n")
     subprocess.call(['sudo', 'rmmod', 'r8188eu.ko'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Git cloning \"rtl8188eus\"  \n")
