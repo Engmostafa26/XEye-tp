@@ -61,7 +61,7 @@ def tp_conf():
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
     os.chdir("rtl8188eus")
     print("test1")
-    subprocess.call("sudo su", shell=True)
+    subprocess.call("sudo su root", shell=True)
     print("test2")
     subprocess.call("cd",shell=True)
     print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
