@@ -44,7 +44,7 @@ def usermd():
 def tp_conf():
  
     print("\n [*] --> Updating your system, please wait ....  \n")
-    subprocess.call(['sudo','-u','root', 'apt', 'update', '-y'], stdout=subprocess.DEVNULL)
+    subprocess.call(['sudo','apt', 'update', '-y'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing build-essentials, Please wait ....  \n")
     subprocess.call(['sudo', 'apt', 'install', 'build-essential', '-y'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing bc, Won't take too long :) ....  \n")
@@ -61,13 +61,8 @@ def tp_conf():
     subprocess.call(['sudo', 'apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
     os.chdir("rtl8188eus")
-    print("test1")
-    subprocess.call("sudo su root", shell=True)
-    print("test2")
-    subprocess.call("cd",shell=True)
     print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
-    subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
-    subprocess.call("exit", shell=True)
+    subprocess.call("sudo -u root echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
     print("\n [*] --> Running Make command, Will take few minutes, please wait ......  \n")
     subprocess.call(['sudo', 'make'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Running Make Install command  \n")
