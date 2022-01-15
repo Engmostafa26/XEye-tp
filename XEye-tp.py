@@ -3,7 +3,7 @@
 import subprocess
 import os
 import re
-print("Hi, the tool is being updated, please clone it again in few hours - Thank you :) ")
+print("/n Hi, the tool is being updated, please clone it again in few hours - Thank you :) /n")
 exit()
 def Checkexis():
     print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" model \"TL-WN722N\" Wifi USB adapter to Monitor mode :):):) \n\n")
