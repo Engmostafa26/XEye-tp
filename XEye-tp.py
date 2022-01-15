@@ -42,6 +42,7 @@ def usermd():
         exit()
 
 def tp_conf():
+    subprocess("sudo su",shell=True)
     print("\n [*] --> Updating your system, please wait ....  \n")
     subprocess.call(['sudo', 'apt', 'update', '-y'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing build-essentials, Please wait ....  \n")
