@@ -3,6 +3,8 @@
 import subprocess
 import os
 import re
+print("Hi, the tool is being updated, please clone it again in few hours - Thank you :) ")
+exit()
  def Checkexis():
     print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" model \"TL-WN722N\" Wifi USB adapter to Monitor mode :):):) \n\n")
     ifconfig_outp = subprocess.check_output('iwconfig')
