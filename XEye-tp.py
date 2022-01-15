@@ -5,7 +5,6 @@ import os
 import re
 
 def Checkexis():
-    subprocess.call("sudo su",shell=True)
     print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" model \"TL-WN722N\" Wifi USB adapter to Monitor mode :):):) \n\n")
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"WIFI@REALTEK", str(ifconfig_outp))
@@ -45,7 +44,7 @@ def usermd():
 def tp_conf():
  
     print("\n [*] --> Updating your system, please wait ....  \n")
-    subprocess.call(['sudo', 'apt', 'update', '-y'], stdout=subprocess.DEVNULL)
+    subprocess.call(['sudo','-u','root', 'apt', 'update', '-y'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing build-essentials, Please wait ....  \n")
     subprocess.call(['sudo', 'apt', 'install', 'build-essential', '-y'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing bc, Won't take too long :) ....  \n")
