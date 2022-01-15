@@ -3,8 +3,7 @@
 import subprocess
 import os
 import re
-
-def Checkexis():
+ def Checkexis():
     print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" model \"TL-WN722N\" Wifi USB adapter to Monitor mode :):):) \n\n")
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"WIFI@REALTEK", str(ifconfig_outp))
@@ -60,9 +59,12 @@ def tp_conf():
     print("\n [*] --> Installing dkms  \n")
     subprocess.call(['sudo', 'apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
-    os.chdir("rtl8188eus")
+    os.chdir("rtl8188eus").
+    print("\n\n [Request] --> Please run the exit command - just type exit then press Enter so the tool will resume and comlete working for you :) :) \n\n")
+    subprocess.call("sudo -i",shell=True)
+    subprocess.call("exit",shell=True)
     print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
-    subprocess.call("sudo -u root echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
+    subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
     print("\n [*] --> Running Make command, Will take few minutes, please wait ......  \n")
     subprocess.call(['sudo', 'make'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Running Make Install command  \n")
@@ -73,7 +75,7 @@ def tp_conf():
     Auto_check = re.search(r"Mode:Auto", str(iwco))
     if not Auto_check:
         print("\n [Warning] --> The Wifi adapter mode is not Auto or it is just missing. ")
-        print(" [Instruction] --> UnPlug and plug in your Wifi USB adapter then try again  \n")
+        print(" [Instruction] --> UnPlug and plug in your Wifi USB adapter, wait for few seconds then run the tool again :)  \n")
         exit()
     if Auto_check.group(0) == 'Mode:Auto':
         print("\n [Congrats] --> The Wifi USB adapter is successfully configured \n")
