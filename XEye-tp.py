@@ -5,7 +5,7 @@ import os
 import re
 print("Hi, the tool is being updated, please clone it again in few hours - Thank you :) ")
 exit()
- def Checkexis():
+def Checkexis():
     print("\n [*] --> Welcome to XEye-tp tool to set the \"tp-link\" model \"TL-WN722N\" Wifi USB adapter to Monitor mode :):):) \n\n")
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"WIFI@REALTEK", str(ifconfig_outp))
@@ -61,7 +61,7 @@ def tp_conf():
     print("\n [*] --> Installing dkms  \n")
     subprocess.call(['sudo', 'apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
-    os.chdir("rtl8188eus").
+    os.chdir("rtl8188eus")
     print("\n\n [Request] --> Please run the exit command - just type exit then press Enter so the tool will resume and comlete working for you :) :) \n\n")
     subprocess.call("sudo -i",shell=True)
     subprocess.call("exit",shell=True)
