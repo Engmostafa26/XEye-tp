@@ -27,7 +27,7 @@ def Checkexis():
     chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
     if chwlannn:
         print("\n [Info] --> Your Wifi USB adapter is already set to Monitor mode, Exiting ...... ")
-        print("\n [Recommendation] --> 1- run the \"exit\" command to exit the root shell, and stay secure because you are an Ethical Hacker ;) ")
+        print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure because you are an Ethical Hacker ;) ")
         exit()
     elif chwlann:
        print("\n [Info] --> Your Wifi USB adapter is already set to Auto mode ")
@@ -38,7 +38,7 @@ def Checkexis():
             tp_conf()
        else:
             print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
-            print("\n [Recommendation] --> 1- run the \"exit\" command to exit the root shell, and stay secure ;) ")
+            print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure ;) ")
             exit()
     elif chwlan:
         usermd()
@@ -53,7 +53,7 @@ def usermd():
     elif sque.lower() == 'n' or sque.lower() == 'no':
         print("\n [*] --> Thanks for using XEye-tp tool, Exiting .....\n")
         print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert")
-        print("\n [Recommendation] --> 1- run the \"exit\" command to exit the root shell, and stay secure ;) ")
+        print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure ;) ")
         exit()
     else:
         print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
@@ -70,7 +70,7 @@ def tp_conf():
     print("\n [*] --> Installing libelf-dev, Please wait ....  \n")
     subprocess.call(['apt', 'install', 'libelf-dev', '-y'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing the required linux-headers, Please wait .....  \n")
-    subprocess.call(['apt', 'install', 'linux-headers-$(uname -r)'], stdout=subprocess.DEVNULL)
+    subprocess.call("apt install linux-headers-$(uname -r)", shell=True)
     print("\n [*] --> Removing \"r8188eu.ko module\"  \n")
     subprocess.call(['rmmod', 'r8188eu.ko'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Git cloning \"rtl8188eus\"  \n")
@@ -100,7 +100,7 @@ def tp_conf():
             tp_set()
         elif asking.lower() == 'n' or asking.lower() == 'no':
             print("\n [Info] --> Now your adapter is just set to Auto mode - Bye Bye :) \n")
-            print("\n [Recommendation] --> 1- run the \"exit\" command to exit the root shell, and stay secure ;) ")
+            print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure ;) ")
             print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert")
             subprocess.call("exit",shell=True)
             exit()
@@ -126,7 +126,7 @@ def tp_check():
     iwcon_Mcheck = re.search(r"Monitor",str(iwcon))
     if iwcon_Mcheck.group(0) == "Monitor":
         print("\n [Congrats] --> You wireless USB has been set to monitor mode, Bye Bye :) :) \n")
-        print("\n [Recommendation] --> 1- run the \"exit\" command to exit the root shell, and stay secure ;) ")
+        print("\n [Recommendation] --> 1- Run the \"exit\" command to exit the root shell, and stay secure ;) ")
         print(" [Recommendation] --> 2- If you want to change the MAC address, clone XEye-Machanger tool from this link: \" https://github.com/Engmostafa26/XEye-MacChanger-v3.2\" ")
         print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert")
         exit()
