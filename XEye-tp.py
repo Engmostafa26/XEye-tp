@@ -75,7 +75,12 @@ def tp_conf():
     print("\n [*] --> Removing \"r8188eu.ko module\"  \n")
     subprocess.call(['rmmod', 'r8188eu.ko'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Git cloning \"rtl8188eus\"  \n")
-    subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
+    unamer = subprocess.check_output(['uname','-r'])
+    unamerr = re.search(r"5.15", str(unamer))
+    if unamerr.group(0):
+        subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
+    else:
+        subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing dkms  \n")
     subprocess.call(['apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
