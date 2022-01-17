@@ -82,7 +82,7 @@ def tp_conf():
     os.chdir("rtl8188eus")
     print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
     subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
-    print("\n [*] --> Running Make command, Will take few minutes, please wait and ignore the upcoming errors ......  \n")
+    print("\n [*] --> Running Make command, Will take few minutes, please wait and ignore the upcoming errors and warnings ......  \n")
     subprocess.call(['sudo', 'make'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Running Make Install command  \n")
     subprocess.call(['sudo', 'make', 'install'], stdout=subprocess.DEVNULL)
