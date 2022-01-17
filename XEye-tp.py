@@ -27,7 +27,7 @@ def Checkexis():
     chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
     if chwlannn:
         print("\n [Info] --> Your Wifi USB adapter is already set to Monitor mode, Exiting ...... ")
-        print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure because you are an Ethical Hacker ;) ")
+        print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
         exit()
     elif chwlann:
        print("\n [Info] --> Your Wifi USB adapter is already set to Auto mode ")
