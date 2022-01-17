@@ -47,13 +47,14 @@ def Checkexis():
         exit()
 
 def usermd():
-    sque= input("\n [Permission] --> Would you like to proceed? [] ")
+    sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
     if sque.lower() == 'y' or sque.lower() == 'yes':
         tp_conf()
     elif sque.lower() == 'n' or sque.lower() == 'no':
         print("\n [*] --> Thanks for using XEye-tp tool, Exiting .....\n")
+        print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure ;) \n")
         print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert")
-        print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure ;) ")
+        
         exit()
     else:
         print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
