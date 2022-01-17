@@ -13,7 +13,7 @@ def Checkroot():
         elif verifywus.lower() == 'n' or verifywus.lower() == 'no':
             print(" [Instruction] --> Please run \"sudo su\" command then enter the password for the current user to change to root with the present directory, then run the tool again :) \n")
         else:
-            print(" [Warning] --> Invalid Entry. Please enter a yes or no answer.  Exiting .....")
+            print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
             exit()
     else:
         print("\n\n [Warning] --> You are not root - Please read and follow the instructions below: \n ")
@@ -74,14 +74,14 @@ def tp_conf():
     print("\n [*] --> Removing \"r8188eu.ko module\"  \n")
     subprocess.call(['rmmod', 'r8188eu.ko'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Git cloning \"rtl8188eus\"  \n")
-    subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
+    subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Installing dkms  \n")
     subprocess.call(['apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
     os.chdir("rtl8188eus")
     print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
     subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
-    print("\n [*] --> Running Make command, Will take few minutes, please wait ......  \n")
+    print("\n [*] --> Running Make command, Will take few minutes, please wait and ignore the upcoming errors ......  \n")
     subprocess.call(['sudo', 'make'], stdout=subprocess.DEVNULL)
     print("\n [*] --> Running Make Install command  \n")
     subprocess.call(['sudo', 'make', 'install'], stdout=subprocess.DEVNULL)
