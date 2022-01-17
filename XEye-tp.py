@@ -13,7 +13,7 @@ def Checkroot():
         elif verifywus.lower() == 'n' or verifywus.lower() == 'no':
             print(" [Instruction] --> Please run \"sudo su\" command then enter the password for the current user to change to root with the present directory, then run the tool again :) \n")
         else:
-            print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
+            print(" [Warning] --> Invalid Entry. Please enter a yes or no answer.  Exiting .....")
             exit()
     else:
         print("\n\n [Warning] --> You are not root - Please read and follow the instructions below: \n ")
