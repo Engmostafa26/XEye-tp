@@ -269,6 +269,7 @@ def TheEnd():
     lines()
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) \n")
     lines()
-    print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder")
+    lines()
+    print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
     exit()
 Checkroot()
