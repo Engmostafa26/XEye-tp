@@ -14,3 +14,5 @@ My Profile on Udemy: https://www.udemy.com/user/mostafa-ahmad-abdelmobdy/
 Facebook Page: https://www.facebook.com/XEye-106840768228008
 
 My Available Books Online: https://app.gumroad.com/xeye
+
+The tool only made by Eng.Mostafa Ahmad, and it is not belonged to anyone else or any other organization other than XEye.
