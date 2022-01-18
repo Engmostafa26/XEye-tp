@@ -203,8 +203,9 @@ def Usermd():
     Mac = input("\n        [Required] --> Enter the required Mac address: ")
     if not Mac:
         print(" \n [Warning] --> No Mac address specified. ")
-        print(" \n [Info] Now your adapter is just set to monitor mode - Exiting .....")
+        print(" \n [Info] Now your adapter is just set to monitor mode - Bye bye .....")
         lines()
+        TheEnd()
         exit()
     Macc1 = getmac(Interface)
     if Macc1 == Mac:
