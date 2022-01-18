@@ -200,7 +200,7 @@ def tp_check():
 def Usermd():
     Interface = getinterf()
     lines()
-    Mac = input("\n         --> Enter the required Mac address: ")
+    Mac = input("\n        [Required] --> Enter the required Mac address: ")
     if not Mac:
         print(" \n [Warning] --> No Mac address specified. ")
         print(" \n [Info] Now your adapter is just set to monitor mode - Exiting .....")
