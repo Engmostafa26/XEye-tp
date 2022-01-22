@@ -7,7 +7,7 @@ def Checkroot():
     who = subprocess.check_output('whoami')
     chuser = re.search(r"root", str(who))
     if chuser:
-        verifywus = input("\n [Verifying] --> The XEye-tp tool needs to run with root user not only running with \"sudo\". Are your running your shell as root? [yes / no] " )
+        verifywus = input("\n [Verifying] --> The XEye-tp tool needs to run with root user not only running with \"sudo\". Are you running your shell as root? [yes / no] " )
         if verifywus.lower() == 'y' or verifywus.lower() == 'yes':
             Start()
         elif verifywus.lower() == 'n' or verifywus.lower() == 'no':
