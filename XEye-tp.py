@@ -18,7 +18,7 @@ def Checkroot():
     else:
         print("\n\n [Warning] --> You are not root - Please read and follow the instructions below: \n ")
         print("\n [Instruction] --> 1- Please run the XEye-tp tool with root user not only with \"sudo\" to configure your adapter with no issues. ")
-        print(" [Instruction] --> 2- Run \"sudo su\" command then enter the password for the current user to change to root with the present directory, then run the tool again :) \n")
+        print(" [Instruction] --> 2- Run \"sudo su\" command then enter the password for the current user to change to root with the pwd, then run the tool again :) \n")
 def Start():
     print("\n **********************************************************************************************************************************************************")
     print("\n [Welcoming] --> Welcome to XEye-tp tool :):):) \n\n")
