@@ -11,7 +11,7 @@ def Checkroot():
         if verifywus.lower() == 'y' or verifywus.lower() == 'yes':
             Start()
         elif verifywus.lower() == 'n' or verifywus.lower() == 'no':
-            print(" [Instruction] --> Please run \"sudo su\" command then enter the password for the current user to change to root with the present directory, then run the tool again :) \n")
+            print(" [Instruction] --> Please run \"sudo su\" command, enter the password for the current user to change to root with the pwd, then run the tool again :) \n")
         else:
             print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
             exit()
