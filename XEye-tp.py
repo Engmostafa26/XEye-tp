@@ -23,7 +23,7 @@ def Start():
     print("\n ************************************************************************************************************************************************************")
     print("\n [Welcoming] --> Welcome to XEye-tp tool :):):) \n\n")
     print(" [Info] --> With XEye-tp tool, you can do the following: \n")
-    print(" \t[*] --> 1) Change your Wifi USB adapter TP-Link model WN722N version 2 and 3 to Monitor mode easily and in few minutes or even seconds :) ")
+    print(" \t[*] --> 1) Change your Wifi USB adapter TP-Link model WN722N version 2 and 3 to Monitor and Injection mode easily and in few minutes or even seconds :) ")
     print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link Wifi USB is set to monitor mode :) \n")
     ifconfig_outp = subprocess.check_output('iwconfig')
     chwlan = re.search(r"WIFI@REALTEK", str(ifconfig_outp))
