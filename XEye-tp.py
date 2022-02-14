@@ -269,6 +269,8 @@ def TheEnd():
     lines()
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) \n")
     lines()
+    print("\n --> The Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
+    print("\n --> The Kali Linux Command course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
     lines()
     print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
     exit()
