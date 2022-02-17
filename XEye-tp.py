@@ -114,7 +114,7 @@ def tp_conf():
     lines()
     unamer = subprocess.check_output(['uname','-r'])
     unamerr = re.search(r"5.15", str(unamer))
-    if unamerr.group(0):
+    if unamerr is not None:
         subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
     else:
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
@@ -268,10 +268,10 @@ def lines():
     print("-------------------------------------------------------------------------------------------------------")
 def TheEnd():
     lines()
-    print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) \n")
-    lines()
-    print("\n --> The Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
-    print("\n --> The Kali Linux Command course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
+    print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
+    print(" [Recommendation] --> The Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
+    print(" [Recommendation] --> The Kali Linux Command course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
+    print(" [Recommendation] --> Make sure to clone the tool once a week as we are updating the tool and adding more features regularly ")
     lines()
     print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
     exit()
