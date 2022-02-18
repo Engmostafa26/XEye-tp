@@ -160,11 +160,10 @@ def tp_conf():
         elif asking.lower() == 'n' or asking.lower() == 'no':
             lines()
             print("\n [Info] --> Now your adapter is just set to Auto mode - Bye Bye :) \n")
-            lines()
+            TheEnd()
         else:
             lines()
             print("\n [Warning] --> Invalid Entry. [Your interface is just set to Auto mode] - Exiting .....\n")
-            lines()
             exit()
 def tp_set():
     interf = getinterf()
@@ -186,43 +185,35 @@ def tp_check():
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             lines()
             print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye :) .....\n")
-            lines()
         else:
             lines()
             print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
-            lines()
             exit()
     else:
         lines()
         print("\n [Failure] --> Sorry :( , your Wifi USB could not be changed to monitor mode ")
         print("\n [Instruction] --> Upgrade and Restart your system then run the tool again ")
-        lines()
         exit()
 def Usermd():
     Interface = getinterf()
     lines()
     Mac = input("\n        [Required] --> Enter the required Mac address: ")
-    lines()
     if not Mac:
         print(" \n [Warning] --> No Mac address specified. ")
         print(" \n [Info] Now your adapter is just set to monitor mode - Bye bye .....")
-        lines()
         TheEnd()
-        exit()
     Macc1 = getmac(Interface)
     if Macc1 == Mac:
         print(" \n [Info] --> You just entered the same Mac address for " + Interface + ", please enter a different Mac address - Exiting ...... ")
-        lines()
         exit()
     ChMac(Interface, Mac)
     Macc2 = getmac(Interface)
     if (Macc2 == Mac) or (Macc1 != Macc2):
         print(" [Done] --> The Mac address is changed successfully to " + Mac)
-        lines()
+        TheEnd()
     else:
-        print(" [Warning] --> Something Went wrong, The Mac address didn't change to "+Mac)
+        print(" [Warning] --> Something Went wrong, The Mac address couldn't change to "+Mac)
         print("\n [Instruction] --> Make sure that you entered a valid Mac address, or unplug then plug in you adapter, wait for few seconds then run the tool again - Bye bye :) ..... ")
-        lines()
         exit()
 
 def ChMac(Interface,Mac):
@@ -247,7 +238,6 @@ def getinterf():
     else:
         lines()
         print(" [Warning] --> Couldn't read your adapter, please make sure that your adapter is plugged in or simply replug it then run the tool again - Exiting .......")
-        lines()
         exit()
 def getmac(interface):
     ifconfgi_re = subprocess.check_output(["ifconfig", interface])
@@ -262,7 +252,6 @@ def getmac(interface):
     else:
         lines()
         print("\n [Warning] --> Please make sure that your adapter is plugged in, then run the tool again and use the set option. - Exiting ..... ")
-        lines()
         exit()
 def lines():
     print("-------------------------------------------------------------------------------------------------------")
