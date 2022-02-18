@@ -124,7 +124,6 @@ def tp_conf():
     os.chdir("rtl8188eus")
     lines()
     print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
-    lines()
     subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
     lines()
     print("\n [*] --> Running Make command, Will take few minutes, please wait and ignore the upcoming errors and warnings ......  \n")
@@ -175,7 +174,6 @@ def tp_check():
         lines()
         print("\n [Congrats] --> You wireless USB has been set to monitor mode :) :) \n")
         Asking = input("\n [Asking] --> Would like to change your adapter Mac address? [yes / no] ")
-        lines()
         if Asking.lower() == 'y' or Asking.lower() == 'yes':
             Usermd()
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
