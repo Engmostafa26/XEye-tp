@@ -121,7 +121,6 @@ def tp_conf():
     subprocess.call(['apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
     lines()
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
-    lines()
     os.chdir("rtl8188eus")
     lines()
     print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
