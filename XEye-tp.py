@@ -111,7 +111,7 @@ def tp_conf():
     print("\n [*] --> Git cloning \"rtl8188eus\"  \n")
     lines()
     unamer = subprocess.check_output(['uname','-r'])
-    unamerr = re.search(r"5.15", str(unamer))
+    unamerr = re.search(r"5.1", str(unamer))
     if unamerr is not None:
         subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
     else:
