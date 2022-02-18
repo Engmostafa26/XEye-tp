@@ -207,7 +207,7 @@ def Usermd():
         TheEnd()
     else:
         print(" [Warning] --> Something Went wrong, The Mac address couldn't change to "+Mac)
-        print("\n [Instruction] --> Make sure that you entered a valid Mac address, or unplug then plug in you adapter, wait for few seconds then run the tool again - Bye bye :) ..... ")
+        print("\n [Instruction] --> Enter a valid Mac address, or unplug then plug in you adapter, wait for few seconds then run the tool again - Bye bye :) ")
         exit()
 
 def ChMac(Interface,Mac):
