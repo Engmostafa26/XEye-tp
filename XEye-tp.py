@@ -145,7 +145,7 @@ def tp_conf():
         print(" [Instruction] --> UnPlug and plug in your Wifi USB adapter, wait for few seconds then run the tool again with root - Bye bye :)   \n")
         lines()
         exit()
-    if Auto_check.group(0) == 'Mode:Auto':
+    if Auto_check is not None:
         lines()
         print("\n [Congrats] --> The Wifi USB adapter is successfully configured \n")
         asking = input("\n [Permission] --> Would you like to set your Wifi USB adapter to Monitor mode now?  [yes / no] ")
@@ -170,7 +170,7 @@ def tp_set():
 def tp_check():
     iwcon = subprocess.check_output(['iwconfig'])
     iwcon_Mcheck = re.search(r"Monitor",str(iwcon))
-    if iwcon_Mcheck.group(0) == "Monitor":
+    if iwcon_Mcheck is not None:
         lines()
         print("\n [Congrats] --> You wireless USB has been set to monitor mode :) :) \n")
         Asking = input("\n [Asking] --> Would like to change your adapter Mac address? [yes / no] ")
