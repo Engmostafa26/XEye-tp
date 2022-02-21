@@ -186,7 +186,9 @@ def tp_check():
     else:
         lines()
         print("\n [Failure] --> Sorry :( , your Wifi USB could not be changed to monitor mode ")
-        print("\n [Instruction] --> Upgrade and Restart your system then run the tool again ")
+        print("\n [Instruction] --> 1) Run the tool again because it might be a technical issue was on your system ")
+        print("\n [Instruction] --> 2) If the issue persists, then upgrade and restart your system then run the tool again ")
+        print("\n [Instruction] --> 3) To upgrade your system, simply run this command \"sudo apt upgrade -y\" ")
         exit()
 def Usermd():
     Interface = getinterf()
