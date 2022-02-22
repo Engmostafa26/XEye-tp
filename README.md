@@ -7,14 +7,14 @@ The tool runs with python version 3 and it needs to run with root user not with 
 Example: python3 XEye-tp.py
 
 
-Official YouTube Channel: https://www.youtube.com/channel/UCy_DTQAMcmXhC4CqSLGwbtQ
-
-The Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484
+The complete Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484
 
 The Kali Linux Command course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592
 
 Official Facebook page: https://www.facebook.com/XEye-106840768228008
 
 Hacking books available Online: https://app.gumroad.com/xeye
+
+Official YouTube Channel: https://www.youtube.com/channel/UCy_DTQAMcmXhC4CqSLGwbtQ
 
 --> [The tool only made by Eng.Mostafa Ahmad, and it is not belonged to anyone else or any other organization other than XEye.]
