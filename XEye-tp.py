@@ -254,7 +254,7 @@ def lines():
 def TheEnd():
     lines()
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
-    print(" [Recommendation] --> The Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
+    print(" [Recommendation] --> The complete Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
     print(" [Recommendation] --> The Linux cmd course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
     print(" [Recommendation] --> Make sure to clone the tool once a week as we are updating the tool and adding more features regularly ")
     lines()
