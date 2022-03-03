@@ -43,7 +43,7 @@ def Start():
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             lines()
             print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
-            lines()
+            TheEnd()
         else:
             invalid()
     elif chwlann:
@@ -181,6 +181,7 @@ def tp_check():
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             lines()
             print("\n [*] --> Thanks for using XEye-tp tool, Your WiFi Adapter \""+interff+"\" is just set to Monitor mode - Bye bye :) .....\n")
+            TheEnd()
         else:
             invalid()
     else:
