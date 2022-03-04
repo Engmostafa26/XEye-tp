@@ -26,7 +26,7 @@ def Start():
     print(" \t[*] --> 1) Change your WiFi USB adapter TP-Link model WN722N v2 and v3 to Monitor and Injection mode easily and in few minutes or even seconds :) ")
     print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link WiFi USB is set to monitor mode :) ")
     print(" \t[*] --> 3) Scan the network and get all the devices Mac addresses easily if the Adapter is connected to that network  :) ")
-    print(" \t[*] --> 4) Make sure to clone the tool again once each week as we are updating the tool and adding more features regularly :):)\n")
+    print(" \t[*] --> 4) Make sure to clone the tool again once each week as I am updating the tool and adding more features regularly :):)\n")
     Intf = getinterf()
     ifconfig_outp = subprocess.getoutput("iwconfig "+Intf)
     chwlan = re.search(r"Mode:Managed", str(ifconfig_outp))
@@ -62,7 +62,7 @@ def Start():
            exit()
     elif chifasso is None:
         print( " [Info] --> Your adapter \""+Intf+"\" is connected to a network ")
-        asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the same network? [yes/no] ")
+        asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             interct()
         elif asking.lower() == 'n' or asking.lower() == 'no':
@@ -85,7 +85,6 @@ def usermd():
         invalid()
 
 def tp_conf():
-    lines()
     print("\n [*] --> Updating your system, please wait ....  \n")
     lines()
     subprocess.call(['apt', 'update', '-y'], stdout=subprocess.DEVNULL)
@@ -251,14 +250,15 @@ def getmac(interface):
         print("\n [Warning] --> Please make sure that your adapter is plugged in, then run the tool again and use the set option. - Exiting ..... ")
         exit()
 def interct():
-    ip = input(" [Required] --> Enter the network range: ")
-    if ip:
-        scanning(ip)
+    ipr = subprocess.getoutput("ip r | grep proto | cut -d\" \" -f1")
+    ip = re.search(r"(?:\d{1,3}\.){3}\d{1,3}(?:/\d\d?)?", str(ipr))
+    if ip is not None:
+        print(" [Info] --> Scanning your network \"" + ip.group(0) + "\", please wait ......")
+        scanning(ip.group(0))
     else:
-        print(" [Warning] --> No Entry ")
+        print(" [Warning] --> The adapter might be disconnected from the network. Please try again - Exiting ..... ")
         exit()
 def scanning(ip):
-    print(" [Info] --> Scanning your network, please wait ......")
     target = sc.ARP(pdst=ip)
     destmac = sc.Ether(dst="ff:ff:ff:ff:ff:ff")
     comb = destmac/target
@@ -284,9 +284,10 @@ def lines():
 def TheEnd():
     lines()
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
-    print(" [Recommendation] --> The complete Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
-    print(" [Recommendation] --> The Linux cmd course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
-    print(" [Recommendation] --> Make sure to clone the tool once a week as we are updating the tool and adding more features regularly ")
+    print("\n\n\t\t\t\t[*] Thanks for using XEye-tp. Below are recommended courses for you :) [*]")
+    print("\n [*] --> The complete Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
+    print(" [*] --> The Linux cmd course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
+    print("\n [Recommendation] --> Make sure to clone the tool once a week as I am updating the tool and adding more features regularly :) ")
     lines()
     print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
     exit()
