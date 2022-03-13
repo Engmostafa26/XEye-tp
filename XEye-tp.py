@@ -119,7 +119,7 @@ def tp_conf():
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
     lines()
     print("\n [*] --> Installing dkms, please wait ..... ")
-    print(" [Info] --> If dkms installation timed out after 30 seconds, the tool would exit and you need to upgrade your Kali with \"sudo apt upgrade -y\" CL \n")
+    print(" [Info] --> If dkms installation timed out after 30 seconds, the tool would exit with error and you need to upgrade your Kali with the \"sudo apt upgrade -y\" CL \n")
     subprocess.call(['apt', 'install', 'dkms'], stdout=subprocess.DEVNULL, timeout=30)
     lines()
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
