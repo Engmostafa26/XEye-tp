@@ -119,7 +119,7 @@ def tp_conf():
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
     lines()
     print("\n [*] --> Installing dkms  \n")
-    subprocess.call(['apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
+    subprocess.call(['apt', 'install', 'dkms'], stdout=subprocess.DEVNULL, timeout=30)
     lines()
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
     os.chdir("rtl8188eus")
