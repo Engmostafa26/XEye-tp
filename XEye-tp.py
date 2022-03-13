@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-
+# The bug of detecting the ip address of eth0 instead of wifi adapter will be resolved in few days :)
 import subprocess
 import os
 import re
