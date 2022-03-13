@@ -111,7 +111,9 @@ def tp_conf():
     lines()
     unamer = subprocess.check_output(['uname','-r'])
     unamerr = re.search(r"\d.\d\d", str(unamer))
-    if unamerr.group(0) >= "5.15":
+    if unamerr is None:
+        subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
+    elif unamerr.group(0) >= "5.15":
         subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
     else:
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
