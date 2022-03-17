@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-# The bug of detecting the subnet of eth0 instead of wifi adapter will be resolved in few days :)
 import subprocess
 import os
 import re
@@ -253,7 +252,8 @@ def getmac(interface):
         print("\n [Warning] --> Please make sure that your adapter is plugged in, then run the tool again and use the set option. - Exiting ..... ")
         exit()
 def interct():
-    ipr = subprocess.getoutput("ip r | grep proto | cut -d\" \" -f1")
+    ipp = subprocess.getoutput("ip r |grep "+getinterf())
+    ipr = subprocess.getoutput(ipp+" | grep proto | cut -d\" \" -f1")
     ip = re.search(r"(?:\d{1,3}\.){3}\d{1,3}(?:/\d\d?)?", str(ipr))
     if ip is not None:
         print(" [Info] --> Scanning your network \"" + ip.group(0) + "\", please wait ......")
