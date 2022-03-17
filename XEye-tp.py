@@ -265,7 +265,7 @@ def scanning(ip):
     target = sc.ARP(pdst=ip)
     destmac = sc.Ether(dst="ff:ff:ff:ff:ff:ff")
     comb = destmac/target
-    gotten = sc.srp(comb,timeout=3,verbose=False)[0]
+    gotten = sc.srp(comb,timeout=7,verbose=False)[0]
     ips = []
     for el in gotten:
         gottenips = {"ips":el[1].psrc,"mac":el[1].hwsrc}
