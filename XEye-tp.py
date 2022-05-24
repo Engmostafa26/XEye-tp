@@ -27,6 +27,7 @@ def Start():
     print(" \t[*] --> 3) Scan the network and get all the devices Mac addresses easily if the Adapter is connected to that network  :) ")
     print(" \t[*] --> 4) Make sure to clone the tool again once each week as I am updating the tool and adding more features regularly :):)\n")
     Intf = getinterf()
+    print("[Info] --> A TP-Link USB WIFI adapter is detected ")
     ifconfig_outp = subprocess.getoutput("iwconfig "+Intf)
     chwlan = re.search(r"Mode:Managed", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
@@ -230,10 +231,10 @@ def getinterf():
     interff = re.search(r"\w\w\w\d", str(interfs))
     enforc = re.search(r"WIFI@REALTEK", str(interfs))
     if interf and enforc:
-        print("[Info] --> A TP-Link USB WIFI adapter is detected ")
+        #print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interf.group(0)
     elif interff and enforc:
-        print("[Info] --> A TP-Link USB WIFI adapter is detected ")
+        #print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
     else:
         lines()
