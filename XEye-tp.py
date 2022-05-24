@@ -230,12 +230,14 @@ def getinterf():
     interff = re.search(r"\w\w\w\d", str(interfs))
     enforc = re.search(r"WIFI@REALTEK", str(interfs))
     if interf and enforc:
+        print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interf.group(0)
     elif interff and enforc:
+        print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
     else:
         lines()
-        print(" [Warning] --> Couldn't read your adapter, please make sure that your adapter is plugged in - Exiting .......")
+        print(" [Warning] --> Couldn't detect your TP-Link adapter, please make sure that your adapter is plugged in - Exiting .......")
         exit()
 def getmac(interface):
     ifconfgi_re = subprocess.check_output(["ifconfig", interface])
