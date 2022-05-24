@@ -34,7 +34,7 @@ def Start():
     chifasso = re.search(r"unassociated", str(ifconfig_outp))
     if chwlannn:
         lines()
-        print("\n [Info] --> Your WiFi USB adapter is already set to Monitor mode ")
+        print("\n [Info] --> Your WiFi TP-Link USB adapter is already set to Monitor mode ")
         Asking = input("\n [Asking] --> Would like to change your adapter Mac address? [yes / no] ")
         lines()
         if Asking.lower() == 'y' or Asking.lower() == 'yes':
@@ -42,7 +42,7 @@ def Start():
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             lines()
             print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
-            TheEnd()
+            TheEnd()           
         else:
             invalid()
     elif chwlann:
