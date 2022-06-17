@@ -294,7 +294,7 @@ def TheEnd():
     print("\n [***] --> The complete Facebook OSINT Hacking course: https://www.udemy.com/course/facebook-osint-hacking/?referralCode=1FEF1A87D703B6DAE484")
     print(" [***] --> The complete Twitter OSINT Hacking course: https://www.udemy.com/course/twitter-osint-hacking/?referralCode=989553134FB1D1CA1D36")
     print(" [***] --> The Introduction to Ethical Hacking course: https://www.udemy.com/course/introduction-to-hacking-n/?referralCode=727E3851BC9C7EBB4314")
-    print(" [***] --> The Linux cmd course: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
+    print(" [***] --> The Linux cmd course for hackers: https://www.udemy.com/course/linux-command-lines-from-a-hackers-perspective/?referralCode=62A07A01780C21117592")
     print("\n [Recommendation] --> Make sure to clone the tool once a week as I am updating the tool and adding more features regularly :) ")
     lines()
     print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
