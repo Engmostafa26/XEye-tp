@@ -120,7 +120,7 @@ def tp_conf():
     lines()
     print("\n [*] --> Installing dkms, please wait ..... ")
     print(" [Info] --> If dkms installation timed out after 90 seconds, the tool would exit with error and you need to upgrade your Kali with the \"sudo apt upgrade -y\" CL \n")
-    subprocess.call(['apt', 'install', 'dkms'], stdout=subprocess.DEVNULL, timeout=90)
+    subprocess.call(['sudo','apt', 'install', 'dkms'], stdout=subprocess.DEVNULL, timeout=90)
     lines()
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
     os.chdir("rtl8188eus")
