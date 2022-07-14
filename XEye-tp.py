@@ -52,6 +52,7 @@ def Start():
         asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
         lines()
         if asking.lower() == 'set':
+           print("[*] --> Please wait ...... ")
            tp_set()
         elif asking.lower() == 'reconf':
            tp_conf()
@@ -170,7 +171,6 @@ def tp_set():
     subprocess.call(['iwconfig', interf, 'mode', 'monitor'])
     subprocess.call(['ifconfig', interf, 'up'])
     time.sleep(5)
-    print("[*] --> Please wait ...... "
     tp_check()
 def tp_check():
     interff = getinterf()
