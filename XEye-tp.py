@@ -170,6 +170,7 @@ def tp_set():
     subprocess.call(['iwconfig', interf, 'mode', 'monitor'])
     subprocess.call(['ifconfig', interf, 'up'])
     time.sleep(5)
+    print("[*] --> Please wait ...... "
     tp_check()
 def tp_check():
     interff = getinterf()
