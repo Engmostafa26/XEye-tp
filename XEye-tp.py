@@ -4,6 +4,7 @@ import os
 import re
 import time
 import scapy.all as sc
+print("test1")
 def udte():
     print("\n[Info] --> The tool will check for updates, please wait .....\n\n")
     time.sleep(3)
