@@ -25,6 +25,7 @@ def udte():
             print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory then run this cmd \"rm -rf XEye-tp\" ")
             print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
             exit()
+    Checkroot()
 def Checkroot():
     who = subprocess.check_output('whoami')
     chuser = re.search(r"root", str(who))
