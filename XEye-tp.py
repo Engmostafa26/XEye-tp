@@ -6,7 +6,25 @@ import time
 import scapy.all as sc
 #print("\n --> The tool is currenly being updated, please clone the tool again later today, then the tool will update itself automatically forever :) \n\n\n\n")
 #print("testt4t")
-subprocess.call("git pull",shell=True)
+def udte():
+    print("\n[Info] --> The tool will check for updates, please wait .....\n\n")
+    time.sleep(3)
+    chupd = subprocess.check_output(['git','pull'])
+    chked = re.search(r"Already up to date", str(chupd))
+    bupted = re.search(r"file changed", str(chupd))
+    if chked:
+        print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
+        time.sleep(2)
+    else:
+        print("\n[Info] --> The tool will be updated, please wait ...... \n")
+        time.sleep(3)
+        if bupted:
+            print("\n[Congrats] --> The tool is updated. Now bugs are fixed and more features added \n")
+        else:
+            print("\n[Warning] --> The tool couldn't be updated, please try again or reclone the tool by following the next instructions \n")
+            print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory then run this cmd \"rm -rf XEye-tp\" ")
+            print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
+            exit()
 def Checkroot():
     who = subprocess.check_output('whoami')
     chuser = re.search(r"root", str(who))
@@ -305,4 +323,4 @@ def TheEnd():
     lines()
     print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
     exit()
-Checkroot()
+udte()
