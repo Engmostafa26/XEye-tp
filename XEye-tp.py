@@ -4,7 +4,7 @@ import os
 import re
 import time
 import scapy.all as sc
-print("\n --> The tool is currenly being updated, please clone the tool again later today, then the tool will update itself automatically forever :) \n\n\n\n")
+#print("\n --> The tool is currenly being updated, please clone the tool again later today, then the tool will update itself automatically forever :) \n\n\n\n")
 def Checkroot():
     who = subprocess.check_output('whoami')
     chuser = re.search(r"root", str(who))
