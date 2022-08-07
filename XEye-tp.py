@@ -47,7 +47,7 @@ def Start():
     print("\n [Welcoming] --> Welcome to XEye-tp tool. The tool provided to you with love by XEye Cybercecurity company and developed by Mostafa Ahmad :):):) \n\n")
     print("\n [Website] --> You can visit our website through https://xeyecs.com")
     print("\n [Info] --> If you have any query or you are facing any difficulties, please message us on our Facebook page and our Cybersecurity team will assist you ")
-    print("\t\t Our Facebook Page: https://www.facebook.com/XEye20212022")
+    print("\t\t [*] --> Our Facebook Page: https://www.facebook.com/XEye20212022")
     time.sleep(3)
     print("\n\n [Info] --> With XEye-tp tool, you can do the following: \n")
     time.sleep(2)
