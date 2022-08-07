@@ -6,6 +6,7 @@ import time
 import scapy.all as sc
 print("test123")
 print("test2232")
+print("don't worry, the tool is under update")
 def udte():
     print("\n[Info] --> The tool will check for updates, please wait .....\n\n")
     time.sleep(3)
