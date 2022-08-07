@@ -49,7 +49,7 @@ def Start():
     print("\n [Info] --> If you have any query or you are facing any difficulties, please message us on our Facebook page and our Cybersecurity team will assist you ")
     print("\t\t Our Facebook Page: https://www.facebook.com/XEye20212022")
     time.sleep(3)
-    print(" [Info] -->\n\n With XEye-tp tool, you can do the following: \n")
+    print("\n\n [Info] --> With XEye-tp tool, you can do the following: \n")
     time.sleep(2)
     print(" \t[*] --> 1) Change your WiFi USB adapter TP-Link model WN722N v2 and v3 to Monitor and Injection mode easily and in few minutes or even seconds :) ")
     print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link WiFi USB is set to monitor mode directly through the tool :) ")
