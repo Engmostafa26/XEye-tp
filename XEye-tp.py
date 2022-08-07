@@ -5,7 +5,7 @@ import re
 import time
 import scapy.all as sc
 def udte():
-    print(Fore.YELLOW + '\n[Info] --> The tool will check for updates, please wait .....\n\n')
+    print("\n[Info] --> The tool will check for updates, please wait .....\n\n")
     time.sleep(3)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
