@@ -4,11 +4,8 @@ import os
 import re
 import time
 import scapy.all as sc
-print("test123")
-print("test2232")
-print("don't worry, the tool is under update")
 def udte():
-    print("\n[Info] --> The tool will check for updates, please wait .....\n\n")
+    print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
     time.sleep(3)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
@@ -17,10 +14,10 @@ def udte():
         print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
         time.sleep(2)
     else:
-        print("\n[Info] --> The tool will be updated, please wait ...... \n")
+        print("\n[Info] --> The XEye-tp tool will be updated, please wait ...... \n")
         time.sleep(3)
         if bupted:
-            print("\n[Congrats] --> The tool is updated. Now bugs are fixed and more features added \n")
+            print("\n[Congrats] --> XEye-tp on your machine is updated. Now bugs are fixed and more features added \n")
         else:
             print("\n[Warning] --> The tool couldn't be updated, please try again or reclone the tool by following the next instructions \n")
             print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory by running this command \"cd ..\" ")
