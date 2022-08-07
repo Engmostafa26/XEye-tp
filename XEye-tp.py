@@ -55,7 +55,7 @@ def Start():
     print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link WiFi USB is set to monitor mode directly through the tool :) ")
     print(" \t[*] --> 3) Scan the network and get all the devices Mac addresses easily if the Adapter is connected to that network  :) ")
     print(" \t[*] --> 4) Many more hacking features will be added regularly and the XEye-tp tool will update itself for you :) ")
-    print("\n [Recommendation] --> It is highly recommended to subscribe to our official Youtube channel, and like our Facebook page to not miss any videos or topics on Ethical Hacking ")
+    print("\n [Recommendation] --> It is highly recommended to subscribe to our YT channel, and like our FB page to not miss any videos or topics on Ethical Hacking ")
     print("\t\t Our Official Youtube channel: https://www.youtube.com/channel/UCy_DTQAMcmXhC4CqSLGwbtQ ")
     print("\t\t Our Official Facebook page: https://www.facebook.com/XEye20212022 ")
     time.sleep(5)
