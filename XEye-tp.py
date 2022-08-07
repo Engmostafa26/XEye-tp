@@ -4,10 +4,8 @@ import os
 import re
 import time
 import scapy.all as sc
-#print("\n --> The tool is not currenly being updated, please clone the tool again later today, then the tool will update itself automatically forever :) \n\n\n\n")
-#print("testt4t")
 def udte():
-    print("\n[Info] --> The tool will check for updates, please wait .....\n\n")
+    print(Fore.YELLOW + '\n[Info] --> The tool will check for updates, please wait .....\n\n')
     time.sleep(3)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
@@ -22,7 +20,8 @@ def udte():
             print("\n[Congrats] --> The tool is updated. Now bugs are fixed and more features added \n")
         else:
             print("\n[Warning] --> The tool couldn't be updated, please try again or reclone the tool by following the next instructions \n")
-            print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory then run this cmd \"rm -rf XEye-tp\" ")
+            print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory by running this command \"cd ..\" ")
+            print("\n[Instruction] -->  then run this cmd \"rm -rf XEye-tp\" to remove the XEye-tp folder ")
             print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
             exit()
     Checkroot()
