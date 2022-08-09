@@ -169,7 +169,7 @@ def tp_conf():
         subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
     def echtwo():
         os.chdir("rtl8188eus")
-        subprocess.call("echo \"blacklist r8188eu\"|sudo tee -a \"/etc/modprobe.d/realtek.conf\"", shell=True)
+        subprocess.call("echo \'blacklist r8188eu\'|sudo tee -a \'/etc/modprobe.d/realtek.conf\'", shell=True)
     lines()
     print("\n [*] --> Running Make command, Will take few minutes, please wait and ignore the upcoming errors and warnings ......  \n")
     lines()
