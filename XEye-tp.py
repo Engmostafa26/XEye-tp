@@ -69,7 +69,7 @@ def Start():
     print("\t\t Our Official Facebook page: https://www.facebook.com/XEye20212022 ")
     time.sleep(3)
     Intf = getinterf()
-    print("[Info] --> A TP-Link USB WIFI adapter is detected ")
+    print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
     ifconfig_outp = subprocess.getoutput("iwconfig "+Intf)
     chwlan = re.search(r"Mode:Managed", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
