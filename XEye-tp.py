@@ -157,24 +157,23 @@ def tp_conf():
     unamerr = re.search(r"\d.\d\d", str(unamer))
     if unamerr is None:
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
-        echone()
-    elif unamerr.group(0) >= "5.15":
-        subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
-        echtwo
-    else:
-        subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
-        echone()
-    lines()
-    def echone():
         os.chdir("rtl8188eus")
         lines()
         print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
         subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
-        #subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
-    def echtwo():
+        subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
+    elif unamerr.group(0) >= "5.15":
+        subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
         os.chdir("rtl8188eus")
-        #subprocess.call("echo \'blacklist r8188eu\'|sudo tee -a \'/etc/modprobe.d/realtek.conf\'", shell=True)
-        subprocess.call("echo \"blacklist r8188eu\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
+        subprocess.call("echo \'blacklist r8188eu\'|sudo tee -a \'/etc/modprobe.d/realtek.conf\'", shell=True)
+        #subprocess.call("echo \"blacklist r8188eu\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
+    else:
+        subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
+        os.chdir("rtl8188eus")
+        lines()
+        print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
+        subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
+        subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)    
     lines()
     print("\n [*] --> Running Make command, Will take few minutes, please wait and ignore the upcoming errors and warnings ......  \n")
     lines()
