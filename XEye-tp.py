@@ -4,6 +4,8 @@ import os
 import re
 import time
 import scapy.all as sc
+
+print("\n\n\n\n\n\t\t\t[Attention] --> The XEye-tp tool is being updated at the moment and it might not work properly, if the tool exit or showed error, please try again in few minutes\n\n\n\n\n"
 def udte():
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
     time.sleep(3)
@@ -44,7 +46,7 @@ def Checkroot():
         print(" [Instruction] --> 2- Run \"sudo su\" command then enter the password for the current user to change to root with the pwd, then run the tool again :) \n")
 def Start():
     print("\n\n******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
-    print("\n [Welcoming] --> Welcome to XEye-tp tool. The tool provided to you with love by XEye Cybercecurity company and developed by Mostafa Ahmad :):):) \n\n")
+    print("\n [Welcoming] --> Welcome to XEye-tp. The tool provided to you with love by XEye Cybercecurity company and developed by Mostafa Ahmad :):):) \n\n")
     print("\n [Website] --> You can visit our website through https://xeyecs.com")
     print("\n [Info] --> If you have any query or you are facing any difficulties, please message us on our FB page and one of our Cybersecurity experts will assist you ")
     print("\t\t [*] --> Our Facebook Page: https://www.facebook.com/XEye20212022")
