@@ -200,10 +200,13 @@ def tp_conf():
 def tp_set():
     interf = getinterf()
     subprocess.call(['ifconfig', interf, 'down'])
+    time.sleep(1)
     subprocess.call("airmon-ng check kill", shell=True)
+    time.sleep(1)
     subprocess.call(['iwconfig', interf, 'mode', 'monitor'])
+    time.sleep(1)
     subprocess.call(['ifconfig', interf, 'up'])
-    time.sleep(5)
+    time.sleep(2)
     tp_check()
 def tp_check():
     interff = getinterf()
