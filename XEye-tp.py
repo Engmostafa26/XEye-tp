@@ -20,7 +20,9 @@ def udte():
         time.sleep(3)
         if bupted:
             print("\n[Congrats] --> XEye-tp on your machine is updated. Now bugs are fixed and more features added \n")
-            time.sleep(2)
+            print("\n[Instruction] --> Please rerun the tool so the updates will take effect.   Exiting ........")
+            time.sleep(3)
+            exit()
         else:
             print("\n[Warning] --> The tool couldn't be updated, please try again or reclone the tool by following the next instructions \n")
             time.sleep(3)
