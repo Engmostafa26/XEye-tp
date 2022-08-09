@@ -189,7 +189,7 @@ def tp_conf():
     time.sleep(1)
     lines()
     subprocess.call("modprobe 8188eu", shell=True)
-    time.sleep(1)
+    time.sleep(3)
     iwco = subprocess.check_output(['iwconfig'])
     Auto_check = re.search(r"Mode:Auto", str(iwco))
     if not Auto_check:
