@@ -199,8 +199,9 @@ def tp_conf():
     Auto_check = re.search(r"Mode:Auto", str(iwco))
     if not Auto_check:
         lines()
-        print("\n [Warning] --> The WiFi adapter mode is not Auto or it is just missing. ")
-        print(" [Instruction] --> UnPlug and plug in your WiFi USB adapter, wait for few seconds then run the tool again with root - Bye bye :)   \n")
+        print("\n [Warning] --> The WiFi adapter mode is not Auto or it is just missing, don't worry just follow the next instruction to bypass the restriction ")
+        print("\n [Info] --> It is normal to see such warnings from time to time as we are bypassing the restrictions on your adapter. ") 
+        print(" [Instruction] --> UnPlug and plug in your WiFi USB adapter, WAIT FOR FEW SECONDS then run the tool again and XEye-tp will do the rest :)   \n")
         lines()
         exit()
     if Auto_check is not None:
@@ -227,7 +228,7 @@ def tp_set():
     subprocess.call(['sudo','iwconfig', interf, 'mode', 'monitor'])
     time.sleep(1)
     subprocess.call(['sudo','ifconfig', interf, 'up'])
-    time.sleep(3)
+    time.sleep(5)
     tp_check()
 def tp_check():
     interff = getinterf()
