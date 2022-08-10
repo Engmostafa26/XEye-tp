@@ -7,6 +7,7 @@ import scapy.all as sc
 
 #print("\n\n\n\n\n\t\t\t[Attention] --> The XEye-tp tool is being updated at the moment and it might not work properly, sorry for any trouble :( ........\n\n\n\n\n")
 def udte():
+    print("\t\t\t[Attention] --> Root privilege is needed for all the functions to work ")
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
     time.sleep(3)
     chupd = subprocess.check_output(['git','pull'])
@@ -21,7 +22,7 @@ def udte():
         if bupted:
             print("\n[Congrats] --> XEye-tp on your machine is updated. Now bugs are fixed and more features added ")
             time.sleep(3)
-            print("[Instruction] --> Please rerun the tool so the updates will take effect.   Exiting ........")
+            print("[Instruction] --> Please rerun XEye-tp so the updates will take effect.   Exiting ........")
             time.sleep(2)
             exit()
         else:
