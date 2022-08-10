@@ -232,7 +232,7 @@ def tp_set():
     tp_check()
 def tp_check():
     interff = getinterf()
-    iwcon = subprocess.getoutput("iwconfig"+interff)
+    iwcon = subprocess.getoutput("iwconfig "+interff)
     iwcon_Mcheck = re.search(r"Mode:Monitor",str(iwcon))
     if iwcon_Mcheck is not None:
         lines()
