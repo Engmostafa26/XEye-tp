@@ -166,12 +166,12 @@ def tp_conf():
         lines()
         print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
         subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
-        subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
+        #subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
     elif unamerr.group(0) >= "5.15":
         subprocess.call(['git', 'clone', 'https://github.com/drygdryg/rtl8188eus.git'], stdout=subprocess.DEVNULL)
         os.chdir("rtl8188eus")
-        subprocess.call("echo \'blacklist r8188eu\'|sudo tee -a \'/etc/modprobe.d/realtek.conf\'", shell=True)
-        #subprocess.call("echo \"blacklist r8188eu\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
+        #subprocess.call("echo \'blacklist r8188eu\'|sudo tee -a \'/etc/modprobe.d/realtek.conf\'", shell=True)
+        subprocess.call("echo \"blacklist r8188eu\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
     else:
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
         os.chdir("rtl8188eus")
