@@ -348,8 +348,9 @@ def invalid():
 def lines():
     print("-------------------------------------------------------------------------------------------------------")
 def TheEnd():
-    print("*******************************************************************************************************")
+    lines()
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
+    print("*******************************************************************************************************")
     print("\n\n\t\t\t\t[*] Thanks for using XEye-tp. Below are our Ethical Hacking courses recommended for you:) [*]")
     print("\n [***]--> The Ultimate Social Media OSINT Hacking Bundle: https://rb.gy/xgrdmv")
     print(" [***] --> Instagram OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/glnllu")
