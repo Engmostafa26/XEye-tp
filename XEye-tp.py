@@ -361,4 +361,4 @@ def TheEnd():
     lines()
     print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
     exit()
-udte()
+Checkroot()
