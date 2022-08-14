@@ -352,7 +352,7 @@ def TheEnd():
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
     print("\n*******************************************************************************************************")
     print("\t\t\t\t[*] Thanks for using XEye-tp. Below are our Ethical Hacking courses recommended for you:) [*]")
-    print("\n [***]--> The Ultimate Social Media OSINT Hacking Bundle: https://rb.gy/xgrdmv")
+    print("\n [***] --> The Ultimate Social Media OSINT Hacking Bundle: https://rb.gy/xgrdmv")
     print(" [***] --> Instagram OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/glnllu")
     print(" [***] --> Facebook OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/ymzseh")
     print(" [***] --> Twitter OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/hogdor")
