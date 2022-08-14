@@ -227,9 +227,8 @@ def tp_set():
     subprocess.call("sudo airmon-ng check kill", shell=True)
     time.sleep(1)
     subprocess.call(['sudo','iwconfig', interf, 'mode', 'monitor'])
-    time.sleep(1)
     subprocess.call(['sudo','ifconfig', interf, 'up'])
-    time.sleep(5)
+    time.sleep(1)
     tp_check()
 def tp_check():
     interff = getinterf()
