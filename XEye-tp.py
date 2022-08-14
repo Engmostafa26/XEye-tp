@@ -7,7 +7,7 @@ import scapy.all as sc
 
 #print("\n\n\n\n\n\t\t\t[Attention] --> The XEye-tp tool is being updated at the moment and it might not work properly, sorry for any trouble :( ........\n\n\n\n\n")
 def udte():
-    print("\t\t\t[Attention] --> Root privilege is needed for all the functions to work ")
+    #print("\n\t\t\t[Attention] --> Root privilege is needed for all the functions to work ")
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
     time.sleep(3)
     chupd = subprocess.check_output(['git','pull'])
@@ -16,6 +16,7 @@ def udte():
     if chked:
         print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
         time.sleep(2)
+        Start()
     else:
         print("\n[Info] --> The XEye-tp tool will be updated, please wait ...... \n")
         time.sleep(3)
@@ -32,14 +33,13 @@ def udte():
             print("\n[Instruction] -->  then run this cmd \"rm -rf XEye-tp\" to remove the XEye-tp folder ")
             print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
             exit()
-    Checkroot()
 def Checkroot():
     who = subprocess.check_output('whoami')
     chuser = re.search(r"root", str(who))
     if chuser:
         verifywus = input("\n [Verifying] --> The XEye-tp tool needs to run with root user not only running with \"sudo\". Are you running your shell as root? [yes / no] " )
         if verifywus.lower() == 'y' or verifywus.lower() == 'yes':
-            Start()
+            udte()
         elif verifywus.lower() == 'n' or verifywus.lower() == 'no':
             print(" [Instruction] --> Please run \"sudo su\" command, enter the password for the current user to change to root with the pwd, then run the tool again :) \n")
         else:
@@ -352,7 +352,7 @@ def TheEnd():
     lines()
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
     print("\n\n\t\t\t\t[*] Thanks for using XEye-tp. Below are our Ethical Hacking courses recommended for you:) [*]")
-    print("\n [***]--> The Ultimate Social Media OSINT Hacking: https://rb.gy/xgrdmv")
+    print("\n [***]--> The Ultimate Social Media OSINT Hacking Bundle: https://rb.gy/xgrdmv")
     print(" [***] --> Instagram OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/mty3iz")
     print(" [***] --> Facebook OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/gwzmcg")
     print(" [***] --> Twitter OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/yrv9kw")
