@@ -5,9 +5,7 @@ import re
 import time
 import scapy.all as sc
 
-#print("\n\n\n\n\n\t\t\t[Attention] --> The XEye-tp tool is being updated at the moment and it might not work properly, sorry for any trouble :( ........\n\n\n\n\n")
 def udte():
-    #print("\n\t\t\t[Attention] --> Root privilege is needed for all the functions to work ")
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
     time.sleep(3)
     chupd = subprocess.check_output(['git','pull'])
