@@ -207,6 +207,7 @@ def tp_conf():
         print("\n [Warning] --> The WiFi adapter mode is not Auto or it is just missing, don't worry just follow the next instruction to bypass the restriction ")
         print("\n [Info] --> It is normal to see such warnings from time to time as we are bypassing the restrictions on your adapter. ") 
         print(" [Instruction] --> UnPlug and plug in your WiFi USB adapter, WAIT FOR FEW SECONDS then run the tool again and XEye-tp will do the rest :)   \n")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         lines()
         exit()
     if Auto_check is not None:
@@ -256,6 +257,7 @@ def tp_check():
         print("\n [Instruction] --> 1) Run the tool again because it might be a technical issue was on your system. ")
         print("\n [Instruction] --> 2) If the issue persists, simply upgrade and restart your system then run the tool again :) ")
         print("\n [Instruction] --> 3) To upgrade your system, just run this command \"sudo apt upgrade -y\" \n ")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         exit()
 def Usermd():
     Interface = getinterf()
@@ -277,6 +279,7 @@ def Usermd():
     else:
         print(" [Warning] --> Something Went wrong, The Mac address couldn't change to "+Mac)
         print("\n [Instruction] --> Enter a valid Mac address, or unplug then plug in you adapter, wait for few seconds then run the tool again - Bye bye :) ")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         exit()
 
 def ChMac(Interface,Mac):
@@ -318,6 +321,8 @@ def getmac(interface):
     else:
         lines()
         print("\n [Warning] --> Please make sure that your adapter is plugged in, then run the tool again and use the set option. - Exiting ..... ")
+        time.sleep(2)
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         exit()
 def interct():
     ipp = subprocess.getoutput("ip r |grep "+getinterf())
@@ -328,6 +333,8 @@ def interct():
         scanning(ip.group(0))
     else:
         print(" [Warning] --> The adapter might be disconnected from the network. Please try again - Exiting ..... ")
+        time.sleep(2)
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         exit()
 def scanning(ip):
     target = sc.ARP(pdst=ip)
