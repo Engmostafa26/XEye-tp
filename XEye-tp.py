@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# The tool is only made by Mostafa Ahmad, The Cybersecurity expert and XEye Cyber Security Company.
 import subprocess
 import os
 import re
