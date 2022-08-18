@@ -108,11 +108,13 @@ def Start():
         print( " [Info] --> Your adapter \""+Intf+"\" is connected to a network. ")
         time.sleep(2)
         print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        time.sleep(2)
         asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             interct()
         elif asking.lower() == 'n' or asking.lower() == 'no':
            print(" [Required] --> Please disconnect from the WiFi network then run the tool again to configure your adapter to Monitor mode - Bye bye :)  ")
+           print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022
         else:
           invalid()
     elif chwlan:
