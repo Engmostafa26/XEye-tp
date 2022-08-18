@@ -114,7 +114,7 @@ def Start():
             interct()
         elif asking.lower() == 'n' or asking.lower() == 'no':
            print(" [Required] --> Please disconnect from the WiFi network then run the tool again to configure your adapter to Monitor mode - Bye bye :)  ")
-           print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022
+           print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         else:
           invalid()
     elif chwlan:
