@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# XEye-tp is only developed by Mostafa Ahmad, The Cybersecurity expert and XEye Cyber Security Company.
+# XEye-tp is only developed by Mostafa Ahmad, The Cybersecurity expert and the XEye Cyber Security company founder.
 import subprocess
 import os
 import re
