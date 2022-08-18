@@ -31,7 +31,7 @@ def udte():
             print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory by running this command \"cd ..\" ")
             print("\n[Instruction] -->  then run this cmd \"rm -rf XEye-tp\" to remove the XEye-tp folder ")
             print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
-            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022
+            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
             exit()
 def Checkroot():
     who = subprocess.check_output('whoami')
@@ -106,6 +106,8 @@ def Start():
            exit()
     elif chifasso is None:
         print( " [Info] --> Your adapter \""+Intf+"\" is connected to a network. ")
+        time.sleep(2)
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             interct()
@@ -299,7 +301,7 @@ def getinterf():
     else:
         lines()
         print(" [Warning] --> Couldn't detect your TP-Link adapter, please make sure that your adapter is plugged in - Exiting .......")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
         exit()
 def getmac(interface):
     ifconfgi_re = subprocess.check_output(["ifconfig", interface])
