@@ -11,7 +11,7 @@ def udte():
     time.sleep(3)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
-    bupted = re.search(r"file changed", str(chupd))
+    bupted = re.search(r"changed", str(chupd))
     if chked:
         print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
         time.sleep(2)
