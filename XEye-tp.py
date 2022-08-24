@@ -31,7 +31,7 @@ def udte():
             print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory by running this command \"cd ..\" ")
             print("\n[Instruction] -->  then run this cmd \"rm -rf XEye-tp\" to remove the XEye-tp folder ")
             print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
-            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
             exit()
 def Checkroot():
     who = subprocess.check_output('whoami')
@@ -107,14 +107,14 @@ def Start():
     elif chifasso is None:
         print( " [Info] --> Your adapter \""+Intf+"\" is connected to a network. ")
         time.sleep(2)
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         time.sleep(2)
         asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             interct()
         elif asking.lower() == 'n' or asking.lower() == 'no':
            print(" [Required] --> Please disconnect from the WiFi network then run the tool again to configure your adapter to Monitor mode - Bye bye :)  ")
-           print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+           print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         else:
           invalid()
     elif chwlan:
@@ -207,7 +207,7 @@ def tp_conf():
         print("\n [Warning] --> The WiFi adapter mode is not Auto or it is just missing, don't worry just follow the next instruction to bypass the restriction ")
         print("\n [Info] --> It is normal to see such warnings from time to time as we are bypassing the restrictions on your adapter. ") 
         print(" [Instruction] --> UnPlug and plug in your WiFi USB adapter, WAIT FOR FEW SECONDS then run the tool again and XEye-tp will do the rest :)   \n")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         lines()
         exit()
     if Auto_check is not None:
@@ -257,7 +257,7 @@ def tp_check():
         print("\n [Instruction] --> 1) Run the tool again because it might be a technical issue was on your system. ")
         print("\n [Instruction] --> 2) If the issue persists, simply upgrade and restart your system then run the tool again :) ")
         print("\n [Instruction] --> 3) To upgrade your system, just run this command \"sudo apt upgrade -y\" \n ")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         exit()
 def Usermd():
     Interface = getinterf()
@@ -279,7 +279,7 @@ def Usermd():
     else:
         print(" [Warning] --> Something Went wrong, The Mac address couldn't change to "+Mac)
         print("\n [Instruction] --> Enter a valid Mac address, or unplug then plug in you adapter, wait for few seconds then run the tool again - Bye bye :) ")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         exit()
 
 def ChMac(Interface,Mac):
@@ -306,7 +306,7 @@ def getinterf():
     else:
         lines()
         print(" [Warning] --> Couldn't detect your TP-Link adapter, please make sure that your adapter is plugged in - Exiting .......")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         exit()
 def getmac(interface):
     ifconfgi_re = subprocess.check_output(["ifconfig", interface])
@@ -322,7 +322,7 @@ def getmac(interface):
         lines()
         print("\n [Warning] --> Please make sure that your adapter is plugged in, then run the tool again and use the set option. - Exiting ..... ")
         time.sleep(2)
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         exit()
 def interct():
     ipp = subprocess.getoutput("ip r |grep "+getinterf())
@@ -334,7 +334,7 @@ def interct():
     else:
         print(" [Warning] --> The adapter might be disconnected from the network. Please try again - Exiting ..... ")
         time.sleep(2)
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEye20212022")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         exit()
 def scanning(ip):
     target = sc.ARP(pdst=ip)
