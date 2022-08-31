@@ -68,7 +68,7 @@ def Start():
     print(" \t[*] --> 4) Many more hacking features will be added regularly and the XEye-tp tool will update itself for you :) ")
     time.sleep(2)
     print("\n [Recommendation] --> It is highly recommended to subscribe to our YT channel, and like our FB page to not miss any videos or topics on Ethical Hacking ")
-    print("\t\t Our Official Youtube channel: https://www.youtube.com/channel/UCy_DTQAMcmXhC4CqSLGwbtQ ")
+    print("\t\t Our Official Youtube channel: https://www.youtube.com/c/XEyecs ")
     print("\t\t Our Official Facebook page: https://www.facebook.com/XEyecs ")
     time.sleep(3)
     Intf = getinterf()
