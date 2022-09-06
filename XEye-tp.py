@@ -315,11 +315,11 @@ def getinterf():
             subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
             print("\n [Instruction] --> The dkms installation is finished, now your system needs to reboot so your adapter will be seen as a WiFi adapter .....")
             rebo = input("\n [Permission] --> Reboot your system? [yes/no] ")
-            if rebo.lower() == yes or rebo.lower() == y:
+            if rebo.lower() == 'yes' or rebo.lower() == 'y':
                 print("\n [Attention] --> Your system will reboot in 15 minutes, make sure to save your work or press on left \"ctrl+c\" to exit")
                 time.sleep(15)
                 subprocess.call("reboot", shell=True)
-            if rebo.lower() == no or rebo.lower() == n:
+            if rebo.lower() == 'no' or rebo.lower() == 'n':
                 print("\n [Info] --> Your system needs to reboot so your TP-Link adapter will be seen as a WiFi Adapter - Exiting ..... ")
                 exit()
             else:
