@@ -87,8 +87,16 @@ def Start():
             Usermd()
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             lines()
-            print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
-            TheEnd()           
+            defau = input("\n [Reset] --> If you want to reset your adapter, you just need to reboot your OS - Reboot now? [yes/no]")
+            if defau.lower() == 'yes' or defau.lower() == 'y':
+                print("\n [Attention] --> We are rebooting your OS in 20 seconds, you can cancel by pressing on the left \"ctrl+c\" ")
+                time.sleep(20)
+                subprocess.call("sudo reboot", shell=True)
+            if defau.lower() == 'no' or defau.lower() == 'n':
+                print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
+                TheEnd()
+            else:
+              invalid()  
         else:
             invalid()
     elif chwlann:
