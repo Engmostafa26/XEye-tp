@@ -320,7 +320,7 @@ def getinterf():
                 time.sleep(15)
                 subprocess.call("reboot", shell=True)
             if rebo.lower() == no or rebo.lower() == n:
-                print("\n [Info] --> Your system needs to reboot so your TP-Link adapter will be seen as a WiFi Adapter - Exiting ..... )
+                print("\n [Info] --> Your system needs to reboot so your TP-Link adapter will be seen as a WiFi Adapter - Exiting ..... ")
                 exit()
             else:
                  invalid()
