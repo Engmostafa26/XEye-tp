@@ -156,7 +156,7 @@ def tp_conf():
     lines()
     print("\n [*] --> Installing dkms, please wait ..... ")
     print(" [Info] --> If dkms installation timed out after 90 seconds, the tool would exit with error and you need to upgrade your Kali with the \"sudo apt upgrade -y\" CL \n")
-    subprocess.call(['sudo','apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
+    subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
     lines()
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
     lines()
@@ -312,7 +312,7 @@ def getinterf():
         lsubs = re.search(r"TL-WN722N", str(lsub))
         if lsubs:
             print("\n [info] --> It is required to install dkms now, we are installing dkms for you - please wait ......")
-            subprocess.call(['sudo','apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
+            subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
             print("\n [Instruction] --> The dkms installation is finished, please rerun the tool again - Exiting .....")
             print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
             exit()
