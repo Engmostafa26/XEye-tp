@@ -308,20 +308,19 @@ def getinterf():
     else:
         lines()
         print(" [Warning] --> Couldn't detect your TP-Link adapter as a WiFi Adapter - please wait .......")
-        tp_conf()
         lsub = subprocess.getoutput('lsusb |grep TL-WN722N')
         lsubs = re.search(r"TL-WN722N", str(lsub))
         if lsubs:
-            print("\n [info] --> It is required to install dkms now, we are installing dkms for you - please wait ......")
-            subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
-            print("\n [Instruction] --> The dkms installation is finished, now your system needs to reboot so your adapter will be seen as a WiFi adapter .....")
-            rebo = input("\n [Permission] --> Reboot your system? [yes/no] ")
+            print("\n [info] --> The adapter is attached, but it is still not seen as a WiFi adapter. Don't worry we will configure everything for you ......")
+            #subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
+            #print("\n [Instruction] --> The dkms installation is finished, now your system needs to reboot so your adapter will be seen as a WiFi adapter .....")
+            rebo = input("\n [Permission] --> Would you like to proceed? [yes/no] ")
             if rebo.lower() == 'yes' or rebo.lower() == 'y':
-                print("\n [Attention] --> Your system will reboot in 15 minutes, make sure to save your work or press on left \"ctrl+c\" to exit")
-                time.sleep(15)
-                subprocess.call("reboot", shell=True)
+                tp_conf()
+                #subprocess.call("reboot", shell=True)
             if rebo.lower() == 'no' or rebo.lower() == 'n':
-                print("\n [Info] --> Your system needs to reboot so your TP-Link adapter will be seen as a WiFi Adapter - Exiting ..... ")
+                print("\n [Info] --> Thanks for using XEye-tp - Exiting ..... ")
+                time.sleep(2)
                 exit()
             else:
                  invalid()
