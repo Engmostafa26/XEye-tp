@@ -308,6 +308,7 @@ def getinterf():
     else:
         lines()
         print(" [Warning] --> Couldn't detect your TP-Link adapter as a WiFi Adapter - please wait .......")
+        tp_conf()
         lsub = subprocess.getoutput('lsusb |grep TL-WN722N')
         lsubs = re.search(r"TL-WN722N", str(lsub))
         if lsubs:
