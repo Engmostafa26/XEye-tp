@@ -307,9 +307,19 @@ def getinterf():
         return interff.group(0)
     else:
         lines()
-        print(" [Warning] --> Couldn't detect your TP-Link adapter, please make sure that your adapter is plugged in - Exiting .......")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
-        exit()
+        print(" [Warning] --> Couldn't detect your TP-Link adapter, please wait .......")
+        lsub = subprocess.getoutput('lsusb |grep TL-WN722N')
+        lsubs = re.search(r"TL-WN722N", str(lsub))
+        if lsubs:
+            print("\n [info] --> It is required to install dkms now, we are installing dkms for you - please wait ......")
+            subprocess.call(['sudo','apt', 'install', 'dkms'], stdout=subprocess.DEVNULL)
+            print("\n [Instruction] --> The dkms installation is finished, please rerun the tool again - Exiting .....")
+            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+            exit()
+        else:
+            print(" [Warning] --> Your adapted is already is not seen by your system, please make sure that it is attached")
+            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+            exit()
 def getmac(interface):
     ifconfgi_re = subprocess.check_output(["ifconfig", interface])
     testing1 = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", str(ifconfgi_re))
