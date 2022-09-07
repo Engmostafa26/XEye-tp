@@ -318,6 +318,7 @@ def getinterf():
         print(" [Warning] --> Couldn't detect your TP-Link adapter as a WiFi Adapter - please wait .......")
         lsub = subprocess.getoutput('lsusb |grep TL-WN722N')
         lsubs = re.search(r"TL-WN722N", str(lsub))
+        time.sleep(2)
         if lsubs:
             print("\n [info] --> The adapter is attached, but it is still not seen as a WiFi adapter. Don't worry we will configure everything for you ......")
             #subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
