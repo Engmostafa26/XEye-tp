@@ -15,7 +15,7 @@ def udte():
     bupted = re.search(r"changed,", str(chupd))
     if chked or chkeds:
         #print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
-        print("\n[Congrats] --> The tool is already up to date")
+        print("\n[Congrats] --> The XEye-tp tool on your PC is already up to date")
         time.sleep(2)
         Start()
     else:
