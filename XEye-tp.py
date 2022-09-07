@@ -390,7 +390,9 @@ def lines():
     print("-------------------------------------------------------------------------------------------------------")
 def TheEnd():
     lines()
+    time.sleep(2)
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
+    time.sleep(3)
     print("\n*******************************************************************************************************")
     print("\t\t\t\t[*] Thanks for using XEye-tp. Below are our Ethical Hacking courses recommended for you:) [*]")
     print("\n [***] --> The Ultimate Social Media OSINT Hacking Bundle: https://rb.gy/xgrdmv")
