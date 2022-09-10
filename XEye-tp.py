@@ -55,7 +55,6 @@ def Start():
     print("\n\n\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
     print("\n\n\t\tThe tool provided to you with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad \n\n")
     print("\tWe happily invite you to subscribe to our YT channel through this link \"https://www.youtube.com/c/XEyecs\" to help you in learning Ethical Hacking :)")
-    print("
     time.sleep(1)
     print("\n\n [Info] --> With XEye-tp tool, you can do the following: \n")
     time.sleep(2)
