@@ -65,7 +65,7 @@ def Start():
     print(" \t[*] --> 1) Change your WiFi USB adapter TP-Link model WN722N v2 and v3 to Monitor and Injection mode easily and in few minutes or even seconds :) ")
     print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link WiFi USB is set to monitor mode directly through the tool :) ")
     print(" \t[*] --> 3) Scan the network and get all the devices Mac addresses easily if the Adapter is connected to that network  :) ")
-    print(" \t[*] --> 4) Many more hacking features will be added regularly and the XEye-tp tool will update itself for you :) ")
+    print(" \t[*] --> 4) You can perform Deauthintication attack :) ")
     time.sleep(2)
     print("\n [Recommendation] --> It is highly recommended to subscribe to our YT channel, and like our FB page to not miss any videos or topics on Ethical Hacking ")
     print("\t\t Our Official Youtube channel: https://www.youtube.com/c/XEyecs ")
@@ -81,20 +81,26 @@ def Start():
     if chwlannn:
         lines()
         print("\n [Info] --> Your WiFi TP-Link USB adapter is already set to Monitor mode ")
-        Asking = input("\n [Asking] --> Would like to change your adapter Mac address? [yes / no] ")
+        Asking = input("\n [Mac Changer] --> Would like to change your adapter Mac address? [yes / no] ")
         lines()
         if Asking.lower() == 'y' or Asking.lower() == 'yes':
             Usermd()
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             lines()
-            defau = input("\n [Reset] --> If you want to reset your adapter, you just need to reboot your OS - Reboot now? [yes/no] ")
-            if defau.lower() == 'yes' or defau.lower() == 'y':
-                print("\n [Attention] --> We are rebooting your OS in 20 seconds, you can cancel by pressing on the left \"ctrl+c\" ")
-                time.sleep(20)
-                subprocess.call("sudo reboot", shell=True)
-            if defau.lower() == 'no' or defau.lower() == 'n':
-                print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
-                TheEnd()
+            askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
+            if askingg.lower() == 'y' or askingg.lower() == 'yes':
+                deauth()
+            elif askingg.lower() == 'n' or askingg.lower() == 'no':
+                defau = input("\n [Reset] --> If you want to reset your adapter, you just need to reboot your OS - Reboot now? [yes/no] ")
+                if defau.lower() == 'yes' or defau.lower() == 'y':
+                    print("\n [Attention] --> We are rebooting your OS in 20 seconds, you can cancel by pressing on the left \"ctrl+c\" ")
+                    time.sleep(20)
+                    subprocess.call("sudo reboot", shell=True)
+                elif defau.lower() == 'no' or defau.lower() == 'n':
+                    print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
+                    TheEnd()
+                else:
+                    invalid()
             else:
               invalid()  
         else:
