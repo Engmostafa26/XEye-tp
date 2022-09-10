@@ -316,6 +316,9 @@ def ChMac(Interface,Mac):
 
 def getinterf():
     interfs = subprocess.getoutput('iwconfig |grep WIFI@REALTEK')
+    interfso = subprocess.getoutput('iwconfig |grep Access Point')
+    intero = re.search(r"\w\w\w\w\d", str(interfso))
+    interoo = re.search(r"\w\w\w\d", str(interfso))
     interf = re.search(r"\w\w\w\w\d", str(interfs))
     interff = re.search(r"\w\w\w\d", str(interfs))
     enforc = re.search(r"WIFI@REALTEK", str(interfs))
@@ -325,9 +328,13 @@ def getinterf():
     elif interff and enforc:
         #print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
+    elif intero:
+        return intero.group(0)
+    elif interoo:
+        return interoo.group(0)
     else:
         lines()
-        print(" [Warning] --> Couldn't detect your TP-Link adapter as a WiFi Adapter - please wait .......")
+        print(" [Warning] --> Couldn't detect a WiFi Adapter - please wait .......")
         lsub = subprocess.getoutput('lsusb |grep TL-WN722N')
         lsubs = re.search(r"TL-WN722N", str(lsub))
         time.sleep(2)
