@@ -400,7 +400,7 @@ def invalid():
 def deauth():
     Intff = getinterf()
     print("\n [Instruction] --> 1- You need to run \"airodump-ng\" against the targeted network\n")
-    dumby = input(" [Waiting] --> Press Enter when you are ready ")
+    dumby = input(" [Waiting] --> Enter any value and press Enter when you are ready ")
     if dumby:
         routmac = input(" [Required] --> Please enter the Mac address of the target's access point(router): ")
         climac = input(" [Required] --> Please enter the Mac address of the target's device: ")
