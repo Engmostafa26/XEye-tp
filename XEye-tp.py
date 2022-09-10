@@ -262,9 +262,15 @@ def tp_check():
         if Asking.lower() == 'y' or Asking.lower() == 'yes':
             Usermd()
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
-            lines()
-            print("\n [*] --> Thanks for using XEye-tp tool, Your WiFi Adapter \""+interff+"\" is just set to Monitor mode - Bye bye :) .....\n")
-            TheEnd()
+            askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
+            if askingg.lower() == 'y' or askingg.lower() == 'yes':
+                deauth()
+            elif askingg.lower() == 'n' or askingg.lower() == 'no':
+                lines()
+                print("\n [*] --> Thanks for using XEye-tp tool, Your WiFi Adapter \""+interff+"\" is just set to Monitor mode - Bye bye :) .....\n")
+                TheEnd()
+            else:
+              invalid()  
         else:
             invalid()
     else:
