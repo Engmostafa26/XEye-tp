@@ -401,7 +401,7 @@ def deauth():
     Intff = getinterf()
     print("\n [Instruction] --> 1- You need to run \"airodump-ng\" against the targeted network\n")
     dumby = input(" [Waiting] --> Press Enter when you are ready ")
-    if dubmy:
+    if dumby:
         routmac = input(" [Required] --> Please enter the Mac address of the target's access point(router): ")
         climac = input(" [Required] --> Please enter the Mac address of the target's device: ")
         #packno = input(" [Required] --> Please enter the number of the deauthentication packets to be sent to the target: ")
