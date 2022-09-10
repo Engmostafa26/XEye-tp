@@ -400,12 +400,12 @@ def invalid():
 def deauth():
     Intff = getinterf()
     print("\n [Instruction] --> You need to run \"airodump-ng\" against the targeted network - Your adapter interface name is "+Intff)
-    dumby = input("\n [Waiting] --> Enter any value and press Enter when you are ready ")
+    dumby = input("\n [Waiting] --> Enter any value and press Enter when you are ready: ")
     if dumby:
         routmac = input(" [Required] --> Please enter the Mac address of the target's access point(router): ")
         climac = input(" [Required] --> Please enter the Mac address of the target's device: ")
         print("\n [Instrucion] --> Make sure that \"airodump-ng\" against the network is running ")
-        dumbi = input("\n [Waiting] --> Enter any value and press Enter when you are ready ")
+        dumbi = input("\n [Waiting] --> Enter any value and press Enter when you are ready: ")
         if dumbi:
             #packno = input(" [Required] --> Please enter the number of the deauthentication packets to be sent to the target: ")
             print("\n [Info] --> the attack is in action, if you want to stop the attack please press on the left \"ctrl+c\" buttons \n\n\n")
