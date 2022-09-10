@@ -52,8 +52,10 @@ def Checkroot():
         print(" [Instruction] --> 2- Run \"sudo su\" command then enter the password for the current user to change to root with the pwd, then run the tool again :) \n")
 def Start():
     print("\n\n******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
-    print("\n \t\t\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
+    print("\n\n\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
     print("\n\n\t\tThe tool provided to you with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad \n\n")
+    print("\tWe happily invite you to subscribe to our YT channel through this link \"https://www.youtube.com/c/XEyecs\" to help you in learning Ethical Hacking :)")
+    print("
     time.sleep(1)
     print("\n\n [Info] --> With XEye-tp tool, you can do the following: \n")
     time.sleep(2)
