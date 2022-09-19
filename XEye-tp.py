@@ -408,7 +408,7 @@ def arpspoof():
     integ = 6
     print("[Info] --> ARP Spoofing attack is started ....")
     time.sleep(1)
-    print("[Instruction] --> To stop the attack and restore all the targets ARP tables, press on the left \"ctrl+c\" more than once")
+    print("[Instruction] --> To stop the attack and restore all the targets ARP tables, press on the left \"ctrl+c\" once or more if needed")
     try:
         while True:
             spoofing(ipo, iptw)
