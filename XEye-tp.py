@@ -33,7 +33,7 @@ def udte():
             print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory by running this command \"cd ..\" ")
             print("\n[Instruction] -->  then run this cmd \"rm -rf XEye-tp\" to remove the XEye-tp folder ")
             print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
-            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
             exit()
 def Checkroot():
     who = subprocess.check_output('whoami')
