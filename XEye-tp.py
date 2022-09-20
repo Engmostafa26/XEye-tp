@@ -404,7 +404,7 @@ def printr(ipss):
 def arpspoof():
     ipo = input("[Required] --> The first target's IP: ")
     iptw = input("[Required] --> The second target's IP: ")
-    print("[Recommended] --> You can use 
+    print("\n[Recommended] --> Clone the XEye-sn sniffer tool through this link \"https://github.com/Engmostafa26/XEye-sn.git\" ")
     time.sleep(1)
     integ = 6
     print("[Info] --> ARP Spoofing attack is started ....")
