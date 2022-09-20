@@ -404,6 +404,7 @@ def printr(ipss):
 def arpspoof():
     ipo = input("[Required] --> The first target's IP: ")
     iptw = input("[Required] --> The second target's IP: ")
+    print("[Recommended] --> You can use 
     time.sleep(1)
     integ = 6
     print("[Info] --> ARP Spoofing attack is started ....")
