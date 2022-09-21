@@ -417,6 +417,7 @@ def arpspoof():
             spoofing(iptw, ipo)
             print("\r ARP Spoofing packets sent: "+str(integ), end="")
             integ += 4
+            time.sleep(1)
     except:
         print("\n\n[Info] --> The attack is stopped, and all the ARP tables will be restored - please wait ....")
         mact = getm(ipo)
