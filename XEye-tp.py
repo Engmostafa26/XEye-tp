@@ -30,7 +30,7 @@ def udte():
         else:
             print("\n[Warning] --> The tool couldn't be updated, please try again or reclone the tool by following the next instructions \n")
             time.sleep(3)
-            print("\n[Instruction] --> Remove the \"XEye-tp\" folder by by going up one directory by running this command \"cd ..\" ")
+            print("\n[Instruction] --> Remove the \"XEye-tp\" folder by going up one directory and by running this command \"cd ..\" ")
             print("\n[Instruction] -->  then run this cmd \"rm -rf XEye-tp\" to remove the XEye-tp folder ")
             print("\n[Instruction] --> Run this command \"git clone https://github.com/Engmostafa26/XEye-tp.git\" ")
             print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
@@ -116,7 +116,7 @@ def Start():
     elif chifasso is None:
         print( " [Info] --> Your adapter \""+Intf+"\" is connected to a network. ")
         time.sleep(2)
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
         time.sleep(2)
         asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
