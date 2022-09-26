@@ -429,6 +429,7 @@ def arpspoof():
         sc.send(packetre,verbose=False,count=3)
         packetree = sc.ARP(op=2,hwdst=mactt,pdst=iptw,psrc=ipo,hwsrc=mact)
         sc.send(packetree, verbose=False, count=3)
+        subprocess.call("echo 0 > /proc/sys/net/ipv4/ip_forward",shell=True)
         print("[Info] --> All the ARP tables of the targets are restored ")
         time.sleep(2)
         exit()
