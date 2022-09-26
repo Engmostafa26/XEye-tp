@@ -395,6 +395,7 @@ def printr(ipss):
     time.sleep(2)
     askii = input("\n\n [Asking] --> Would you like to start ARP spoofing attack? ")
     if askii.lower() == 'y' or askii.lower() == 'yes':
+        subprocess.call("echo 1 > /proc/sys/net/ipv4/ip_forward",shell=True)
         arpspoof()
     elif askii.lower() == 'n' or askii.lower() == 'no':
         time.sleep(1)
