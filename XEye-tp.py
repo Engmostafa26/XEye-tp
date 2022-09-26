@@ -417,7 +417,7 @@ def arpspoof():
     try:
         while True:
             spoofing(ipo, iptw, mact)
-            #time.sleep(1)
+            time.sleep(3)
             spoofing(iptw, ipo, mactt)
             print("\r ARP Spoofing packets sent: "+str(integ), end="")
             integ += 4
