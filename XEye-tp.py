@@ -8,7 +8,7 @@ import scapy.all as sc
 
 def udte():
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
-    time.sleep(3)
+    time.sleep(2)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
     chkeds = re.search(r"actualizado", str(chupd))
@@ -23,9 +23,9 @@ def udte():
         time.sleep(3)
         if bupted:
             print("\n[Congrats] --> XEye-tp on your machine is updated. Now bugs are fixed and more features added ")
-            time.sleep(3)
+            time.sleep(1)
             print("[Instruction] --> Please rerun XEye-tp so the updates will take effect.   Exiting ........")
-            time.sleep(2)
+            time.sleep(1)
             exit()
         else:
             print("\n[Warning] --> The tool couldn't be updated, please try again or reclone the tool by following the next instructions \n")
@@ -57,7 +57,6 @@ def Start():
     print("\tWe happily invite you to subscribe to our YT channel through this link \"https://www.youtube.com/c/XEyecs\" to help you in learning Ethical Hacking :)")
     time.sleep(1)
     print("\n\n [Info] --> With XEye-tp tool, you can do the following: \n")
-    time.sleep(2)
     print(" \t[*] --> 1) Change your WiFi USB adapter TP-Link model WN722N v2 and v3 to Monitor and Injection mode easily and in few minutes or even seconds ")
     print(" \t[*] --> 2) You can easily change the Mac address after your TP-Link WiFi USB is set to monitor mode directly through the tool ")
     print(" \t[*] --> 3) Scan the network and get all the devices Mac addresses easily if the Adapter is connected to that network ")
