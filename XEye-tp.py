@@ -321,9 +321,23 @@ def getinterf():
         #print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
     elif intero:
-        return intero.group(0)
+        asko = input("[Info] --> The WiFi interface "+intero+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
+        if asko.lower() == 'y' or asko.lower() == 'yes':
+            return intero.group(0)
+        elif asko.lower() == 'n' or asko.lower() == 'no':
+            print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
+            exit()
+        else:
+            invalid()
     elif interoo:
-        return interoo.group(0)
+        asko = input("[Info] --> The WiFi interface "+intero+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
+        if asko.lower() == 'y' or asko.lower() == 'yes':
+            return interoo.group(0)
+        elif asko.lower() == 'n' or asko.lower() == 'no':
+            print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
+            exit()
+        else:
+            invalid()
     else:
         lines()
         print(" [Warning] --> Couldn't detect a WiFi Adapter - please wait .......")
@@ -331,7 +345,7 @@ def getinterf():
         lsubs = re.search(r"TL-WN722N", str(lsub))
         time.sleep(2)
         if lsubs:
-            print("\n [info] --> The adapter is attached, but it is still not seen as a WiFi adapter. Don't worry we will configure everything for you ......")
+            print("\n [info] --> The TP-Link WN722N adapter is attached, but it is still not seen as a WiFi adapter. Don't worry we will configure everything for you ......")
             #subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
             #print("\n [Instruction] --> The dkms installation is finished, now your system needs to reboot so your adapter will be seen as a WiFi adapter .....")
             rebo = input("\n [Permission] --> Would you like to proceed? [yes/no] ")
@@ -345,7 +359,7 @@ def getinterf():
             else:
                  invalid()
         else:
-            print(" [Warning] --> Your adapted is not seen by your system, please make sure that it is attached")
+            print(" [Warning] --> Your TP-WN722N adapted is not seen by your system, please make sure that it is attached")
             print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
             exit()
 def getmac(interface):
