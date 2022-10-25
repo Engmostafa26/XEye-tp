@@ -64,7 +64,7 @@ def Start():
     print(" \t[*] --> 5) You can perform ARP spoofing attack ")
     time.sleep(3)
     Intf = getinterf()
-    print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
+    #print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
     ifconfig_outp = subprocess.getoutput("iwconfig "+Intf)
     chwlan = re.search(r"Mode:Managed", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
@@ -315,10 +315,10 @@ def getinterf():
     interff = re.search(r"\w\w\w\d", str(interfs))
     enforc = re.search(r"WIFI@REALTEK", str(interfs))
     if interf and enforc:
-        #print("[Info] --> A TP-Link USB WIFI adapter is detected ")
+        print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interf.group(0)
     elif interff and enforc:
-        #print("[Info] --> A TP-Link USB WIFI adapter is detected ")
+        print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
     elif intero:
         asko = input("[Info] --> The WiFi interface "+intero+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
