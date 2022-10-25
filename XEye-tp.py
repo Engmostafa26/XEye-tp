@@ -330,7 +330,7 @@ def getinterf():
         else:
             invalid()
     elif interoo:
-        asko = input("[Info] --> The WiFi interface "+intero+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
+        asko = input("[Info] --> The WiFi interface "+interoo+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
         if asko.lower() == 'y' or asko.lower() == 'yes':
             return interoo.group(0)
         elif asko.lower() == 'n' or asko.lower() == 'no':
