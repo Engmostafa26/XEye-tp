@@ -4,15 +4,15 @@ import subprocess, os, re, time
 import scapy.all as sc
 def udte():
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
-    time.sleep(2)
-    chupd = subprocess.check_output(['git','pull'])
+    time.sleep(1)
+    chupd = subprocess.check_output(['git','pull'], stdout=subprocess.DEVNULL)
     chked = re.search(r"Already up to date", str(chupd))
     chkeds = re.search(r"actualizado", str(chupd))
     bupted = re.search(r"changed,", str(chupd))
     if chked or chkeds:
         #print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
         print("\n[Congrats] --> The XEye-tp tool on your PC is already up to date")
-        time.sleep(2)
+        time.sleep(1)
         Start()
     else:
         print("\n[Info] --> The XEye-tp tool will be updated, please wait ...... \n")
