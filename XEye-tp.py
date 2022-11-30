@@ -1,11 +1,7 @@
 #! /usr/bin/env python3
 # XEye-tp is only developed by Mostafa Ahmad, The Cybersecurity Expert and Senior Penetration Tester
-import subprocess
-import os
-import re
-import time
+import subprocess, os, re, time
 import scapy.all as sc
-
 def udte():
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
     time.sleep(2)
