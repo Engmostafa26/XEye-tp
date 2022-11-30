@@ -30,17 +30,15 @@ def Checkroot():
     who = subprocess.check_output('whoami')
     chuser = re.search(r"root", str(who))
     if chuser:
-        verifywus = input("\n [Verifying] --> The XEye-tp tool needs to run with root user not only running with \"sudo\". Are you running your shell as root? [yes / no] " )
+        verifywus = input("\n [Verifying] --> XEye-tp needs to run with root user not with \"sudo\". Are you running root shell? [yes / no] " )
         if verifywus.lower() == 'y' or verifywus.lower() == 'yes':
             udte()
         elif verifywus.lower() == 'n' or verifywus.lower() == 'no':
-            print(" [Instruction] --> Please run \"sudo su\" command, enter the password for the current user to change to root with the pwd, then run the tool again :) \n")
+            print(" [Instruction] --> Please run \"sudo su\" command \n")
         else:
             invalid()
     else:
-        print("\n\n [Warning] --> You are not root - Please read and follow the instructions below: \n ")
-        print("\n [Instruction] --> 1- Please run the XEye-tp tool with root user not only with \"sudo\" to configure your adapter with no issues. ")
-        print(" [Instruction] --> 2- Run \"sudo su\" command then enter the password for the current user to change to root with the pwd, then run the tool again :) \n")
+        print("\n\n [Warning] --> You are not root - Please run \"sudo su\" command. \n ")
 def Start():
     print("\n\n******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\n\n\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
