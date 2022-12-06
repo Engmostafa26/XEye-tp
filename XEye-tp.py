@@ -57,7 +57,7 @@ def Start():
     time.sleep(3)
     Intf = getinterf()
     #print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
-    ifconfig_outp = subprocess.getoutput("iwconfig "+Intf)
+    ifconfig_outp = subprocess.getoutput("iwconfig "+str(Intf))
     chwlan = re.search(r"Mode:Managed", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
     chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
