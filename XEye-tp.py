@@ -2,6 +2,8 @@
 # XEye-tp is only developed by Mostafa Ahmad, The Cybersecurity Expert and Senior Penetration Tester
 import subprocess, os, re, time
 import scapy.all as sc
+print("[Warning] --> XEye-tp will be updated in the upcoming few days, if you are facing any output error, please contact us on our fb page \"https://fb.com/XEyecs\" to prioritize fixing it")
+time.sleep(3)
 def udte():
     print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n") #n up
     time.sleep(1)
