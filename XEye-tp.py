@@ -35,9 +35,11 @@ def Checkroot():
             udte()
         else:
             print("[Warning] --> XEye-tp needs to run within its directory - Exiting .....")
+            print("\n[Support] --> Need any help, please let us know through our fb page \"fb.com/XEyecs\"")
             exit(2)
     else:
         print("\n\n [Warning] --> You are not root - Please run \"sudo su\" command. \n ")
+        print("\n[Support] --> Need any help, please let us know through our fb page \"fb.com/XEyecs\"")
 def Start():
     print("\n\n******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\n\n\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
