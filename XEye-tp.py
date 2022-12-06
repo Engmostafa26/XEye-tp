@@ -39,7 +39,7 @@ def Checkroot():
             exit(2)
     else:
         print("\n\n [Warning] --> You are not root - Please run \"sudo su\" command. \n ")
-        print("\n[Support] --> Need any help, please let us know through our fb page \"fb.com/XEyecs\"")
+        print("\n[Support] --> Need any help, please let us know through our fb page \"https://fb.com/XEyecs\"")
 def Start():
     print("\n\n******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\n\n\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
