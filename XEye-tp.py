@@ -27,15 +27,14 @@ def udte():
             exit()
 def Checkroot():
     who = subprocess.check_output('whoami')
+    pdir = subprocess.check_output(['cd','.'])
     chuser = re.search(r"root", str(who))
-    if chuser:
-        verifywus = input("\n [Verifying] --> XEye-tp needs to run with root user not with \"sudo\". Are you running root shell? [yes / no] " )
-        if verifywus.lower() == 'y' or verifywus.lower() == 'yes':
+    chdir = re.search(r"XEye-tp", str(pdir))
+    if chuser and os.getuid() == 0:
+        if chdir:
             udte()
-        elif verifywus.lower() == 'n' or verifywus.lower() == 'no':
-            print(" [Instruction] --> Please run \"sudo su\" command \n")
         else:
-            invalid()
+            print("[Warning] --> XEye-tp needs to run within its directory - Exiting .....")
     else:
         print("\n\n [Warning] --> You are not root - Please run \"sudo su\" command. \n ")
 def Start():
