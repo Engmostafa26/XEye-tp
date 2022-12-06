@@ -105,7 +105,7 @@ def Start():
            lines()
            exit()
     elif chifasso is None:
-        print( " [Info] --> Your adapter \""+Intf+"\" is connected to a network. ")
+        print( " [Info] --> Your adapter \""+str(Intf)+"\" is connected to a network. ")
         time.sleep(2)
         print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
         time.sleep(2)
