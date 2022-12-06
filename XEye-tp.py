@@ -27,7 +27,7 @@ def udte():
             exit()
 def Checkroot():
     who = subprocess.check_output('whoami')
-    pdir = subprocess.check_output(['cd','.'])
+    pdir = subprocess.check_output('pwd')
     chuser = re.search(r"root", str(who))
     chdir = re.search(r"XEye-tp", str(pdir))
     if chuser and os.getuid() == 0:
