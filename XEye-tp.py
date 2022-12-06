@@ -322,14 +322,15 @@ def getinterf():
         else:
             invalid()
     elif interoo:
-        asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
-        if asko.lower() == 'y' or asko.lower() == 'yes':
-            return interoo.group(0)
-        elif asko.lower() == 'n' or asko.lower() == 'no':
-            print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
-            exit()
-        else:
-            invalid()
+        if str(interoo.group(0)) != "eth0": 
+            asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
+            if asko.lower() == 'y' or asko.lower() == 'yes':
+                return interoo.group(0)
+            elif asko.lower() == 'n' or asko.lower() == 'no':
+                print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
+                exit()
+            else:
+                invalid()
     else:
         lines()
         print(" [Warning] --> Couldn't detect a WiFi Adapter - please wait .......")
