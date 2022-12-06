@@ -3,7 +3,7 @@
 import subprocess, os, re, time
 import scapy.all as sc
 def udte():
-    print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n")
+    print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n") #n up
     time.sleep(1)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
