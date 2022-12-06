@@ -57,7 +57,7 @@ def Start():
     time.sleep(3)
     Intf = getinterf()
     #print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
-    ifconfig_outp = subprocess.getoutput("iwconfig "+Intf)
+    ifconfig_outp = subprocess.getoutput("iwconfig "+str(Intf))
     chwlan = re.search(r"Mode:Managed", str(ifconfig_outp))
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
     chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
@@ -237,7 +237,7 @@ def tp_set():
     tp_check()
 def tp_check():
     interff = getinterf()
-    iwcon = subprocess.getoutput("iwconfig "+interff)
+    iwcon = subprocess.getoutput("iwconfig "+str(interff))
     iwcon_Mcheck = re.search(r"Mode:Monitor",str(iwcon))
     if iwcon_Mcheck is not None:
         lines()
@@ -325,7 +325,7 @@ def getinterf():
         if str(interoo.group(0)) != "eth0": 
             asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
             if asko.lower() == 'y' or asko.lower() == 'yes':
-                return str(interoo.group(0))
+                return interoo.group(0)
             elif asko.lower() == 'n' or asko.lower() == 'no':
                 print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
                 exit()
