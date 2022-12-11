@@ -5,7 +5,7 @@ import scapy.all as sc
 print("[Apologies] --> XEye-tp will be updated in the upcoming few days, if you are facing any output error, just contact us on our fb page \"https://fb.com/XEyecs\" to prioritize fixing it")
 time.sleep(3)
 def udte():
-    print("\n[Info] --> The XEye-tp tool will check for its updates, please wait .....\n\n") #n up
+    print("\n[Info] --> Checking for updates, please wait .....\n\n") #n up
     time.sleep(1)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
@@ -13,7 +13,7 @@ def udte():
     bupted = re.search(r"changed,", str(chupd))
     if chked or chkeds:
         #print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
-        print("\n[Congrats] --> The XEye-tp tool on your PC is already up to date")
+        print("\n[Congrats] --> The XEye-tp on your machine is up to date")
         time.sleep(1)
         Start()
     else:
@@ -36,12 +36,13 @@ def Checkroot():
         if chdir:
             udte()
         else:
-            print("[Warning] --> XEye-tp needs to run within its directory - Exiting .....")
-            print("\n[Support] --> Need any help, please let us know through our fb page \"https://fb.com/XEyecs\"")
+            print("[Warning] --> the PWD is not XEye-tp - Exiting .....")
+            time.sleep(1)
+            print("[Support] --> If you need help, please let us know through our fb page \"https://fb.com/XEyecs\"")
             exit(2)
     else:
         print("\n\n [Warning] --> You are not root - Please run \"sudo su\" command. \n ")
-        print("\n[Support] --> Need any help, please let us know through our fb page \"https://fb.com/XEyecs\"")
+        print("\n[Support] --> IF you need any help, please let us know through our fb page \"https://fb.com/XEyecs\"")
 def Start():
     print("\n\n******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\n\n\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
