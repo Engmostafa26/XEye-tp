@@ -12,20 +12,19 @@ def udte():
     chkeds = re.search(r"actualizado", str(chupd))
     bupted = re.search(r"changed,", str(chupd))
     if chked or chkeds:
-        #print("\n[Congrats] --> the tool is "+str(chked[0].lower()))
-        print("\n[Congrats] --> The XEye-tp on your machine is up to date")
+        print("\n[Congrats] --> XEye-tp is up to date")
         time.sleep(1)
         Start()
     else:
-        print("\n[Info] --> The XEye-tp tool will be updated, please wait ...... \n")
+        print("\n[Info] --> XEye-tp will be updated, please wait ...... \n")
         time.sleep(3)
         if bupted:
-            print("\n[Congrats] --> XEye-tp on your machine is updated. ")
+            print("\n[Congrats] --> XEye-tp is updated. ")
             time.sleep(1)
             print("[Instruction] --> Please rerun XEye-tp so the updates will take effect. ")
             exit()
         else:
-            print("\n[Warning] --> The tool couldn't be updated, please try again or reclone the tool ")
+            print("\n[Warning] --> XEye-tp couldn't be updated, please try again or reclone the tool ")
             exit()
 def Checkroot():
     who = subprocess.check_output('whoami')
