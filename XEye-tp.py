@@ -43,10 +43,10 @@ def Checkroot():
         print("\n\n [Warning] --> You are not root - Please run \"sudo su\" command. \n ")
         print("\n[Support] --> IF you need any help, please let us know through our fb page \"https://fb.com/XEyecs\"")
 def Start():
-    print("\n\n\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
-    print("\nt\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
-    print("\n\n\t\tXEye is made with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad \n\n")
-    print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" ") #fromhere
+    print("\n\n\t\t\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
+    print("\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
+    print("\t\tXEye is made with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad ")
+    print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" ")
     time.sleep(1)
     Intf = getinterf()
     #print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
