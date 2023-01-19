@@ -13,7 +13,7 @@ def udte():
     if chked or chkeds:
         print("\n[Congrats] --> XEye-tp is up to date")
         time.sleep(1)
-        print("[Apology] --> We do apologize as we update XEye-tp and it is not functioning properly, please try again later .... ")
+        print("[Apology] --> We do apologize as we update XEye-tp for more hacking features, please try again later .... ")
         exit(3)
         #Start()
     else:
