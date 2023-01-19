@@ -2,7 +2,6 @@
 # XEye-tp is only developed by Mostafa Ahmad, The XEye(XEyecs.com) founder, Cybersecurity Expert and Senior Penetration Tester.
 import subprocess, os, re, time
 import scapy.all as sc
-print("[Apologies] --> XEye-tp will be updated soon, if you are facing any output error, just contact us on our fb page \"https://fb.com/XEyecs\" to prioritize fixing it")
 time.sleep(2)
 def udte():
     print("\n[Info] --> Checking for updates, please wait .....\n\n") #n up
@@ -14,7 +13,9 @@ def udte():
     if chked or chkeds:
         print("\n[Congrats] --> XEye-tp is up to date")
         time.sleep(1)
-        Start()
+        print("[Apology] --> We do apologize as we update XEye-tp and it is not functioning properly, please try again later .... ")
+        exit(3)
+        #Start()
     else:
         print("\n[Info] --> XEye-tp will be updated, please wait ...... \n")
         time.sleep(3)
@@ -48,7 +49,7 @@ def Start():
     print("\t\tXEye is made with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad ")
     print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" ")
     time.sleep(1)
-    Intf = getinterf()
+    Intf = getinterf() #issue needs to be fixed here.
     #print("\n\n[Info] --> A TP-Link USB WIFI adapter is detected \n\n")
     ifconfig_outp = subprocess.getoutput("iwconfig "+str(Intf))
     chwlan = re.search(r"Mode:Managed", str(ifconfig_outp))
