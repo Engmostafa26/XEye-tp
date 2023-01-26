@@ -22,7 +22,7 @@ def udte():
         if bupted:
             print("\n[Congrats] --> XEye-tp is updated. ")
             time.sleep(1)
-            print("[Instruction] --> Please rerun XEye-tp so the updates will take effect. ")
+            print("[Instruction] --> Please rerun XEye-tp and updates will take effect. ")
             exit()
         else:
             print("\n[Warning] --> XEye-tp couldn't be updated, please try again or reclone the tool ")
@@ -46,7 +46,7 @@ def Checkroot():
 def Start():
     print("\n\n\t\t\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
-    print("\t\tXEye is made with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad ")
+    print("\t\tXEye-tp is made with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad ")
     print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" ")
     time.sleep(1)
     Intf = getinterf() #issue needs to be fixed here.
@@ -58,7 +58,7 @@ def Start():
     chifasso = re.search(r"unassociated", str(ifconfig_outp))
     if chwlannn:
         lines()
-        print("\n [Info] --> Your WiFi TP-Link USB adapter is already set to Monitor mode ")
+        print("\n [Info] --> Your WiFi USB adapter is already set to Monitor mode ")
         Asking = input("\n [Mac Changer] --> Would like to change your adapter Mac address? [yes / no] ")
         lines()
         if Asking.lower() == 'y' or Asking.lower() == 'yes':
@@ -88,16 +88,17 @@ def Start():
         print("\n [Info] --> Your WiFi USB adapter is already set to Auto mode ")
         asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
         lines()
+        while asking.lower() != 'set' or asking.lower() != 'reconf':
+            lines()
+            print(" [Warning] --> Invalid Entry. Please use \"set\" or \"reconf\" option ....")
+            lines()
+            asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
+            lines()
         if asking.lower() == 'set':
            print("[*] --> Please wait ...... ")
            tp_set()
         elif asking.lower() == 'reconf':
            tp_conf()
-        else:
-           lines()
-           print(" [Warning] --> Invalid Entry. [Your interface is just set to Auto mode]   Exiting .....")
-           lines()
-           exit()
     elif chifasso is None:
         print( " [Info] --> Your adapter \""+str(Intf)+"\" is connected to a network. ")
         time.sleep(2)
