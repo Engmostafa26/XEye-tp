@@ -93,7 +93,7 @@ def Start():
             print(" [Warning] --> Invalid Entry. Please use \"set\" or \"reconf\" option ....")
             lines()
             asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
-            lines()
+            lines() #start from here
         if asking.lower() == 'set':
            print("[*] --> Please wait ...... ")
            tp_set()
