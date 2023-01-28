@@ -15,7 +15,7 @@ def udte():
         time.sleep(1)
         #print("[Apology] --> We do apologize as we update XEye-tp for more hacking features, please try again later .... ")
         #exit(3)
-        #Start()
+        Start()
     else:
         print("\n[Info] --> XEye-tp will be updated, please wait ...... \n")
         time.sleep(3)
