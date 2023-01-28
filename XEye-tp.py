@@ -120,7 +120,10 @@ def Start():
 def usermd(): #start from here
     lines()
     sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
-    lines()
+    while sque.lower() != 'y' or sque.lower != 'n' or sque.lower() != 'yes' or sque.lower() != 'no':
+        print("[Warning] --> Invalid Entry, please use \"yes\" or \"no\" options...")
+        time.sleep(1)
+        sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
     if sque.lower() == 'y' or sque.lower() == 'yes':
         tp_conf()
     elif sque.lower() == 'n' or sque.lower() == 'no':
@@ -139,7 +142,7 @@ def tp_conf():
     lines()
     subprocess.call(['apt', 'install', 'build-essential', '-y'], stdout=subprocess.DEVNULL)
     lines()
-    print("\n [*] --> Installing bc, Won't take too long :) ....  \n")
+    print("\n [*] --> Installing bc, Won't take too long ....  \n")
     lines()
     subprocess.call(['apt', 'install', 'bc', '-y'], stdout=subprocess.DEVNULL)
     lines()
@@ -151,7 +154,6 @@ def tp_conf():
     subprocess.call(['apt', 'install', 'libelf-dev', '-y'], stdout=subprocess.DEVNULL)
     lines()
     print("\n [*] --> Installing dkms, please wait ..... ")
-    #print(" [Info] --> If dkms installation timed out after 90 seconds, the tool would exit with error and you need to upgrade your Kali with the \"sudo apt upgrade -y\" CL \n")
     subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
     lines()
     print("\n [*] --> Done installing dkms. proceeding further ....  \n")
