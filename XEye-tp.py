@@ -4,7 +4,7 @@ import subprocess, os, re, time
 import scapy.all as sc
 time.sleep(2)
 def udte():
-    print("\n[Info] --> Checking for updates, please wait .....\n\n") #n up
+    print("\n[Info] --> Checking for updates, please wait .....\n\n")
     time.sleep(1)
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
@@ -13,8 +13,8 @@ def udte():
     if chked or chkeds:
         print("\n[Congrats] --> XEye-tp is up to date")
         time.sleep(1)
-        print("[Apology] --> We do apologize as we update XEye-tp for more hacking features, please try again later .... ")
-        exit(3)
+        #print("[Apology] --> We do apologize as we update XEye-tp for more hacking features, please try again later .... ")
+        #exit(3)
         #Start()
     else:
         print("\n[Info] --> XEye-tp will be updated, please wait ...... \n")
