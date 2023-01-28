@@ -92,6 +92,7 @@ def Start():
             lines()
             print(" [Warning] --> Invalid Entry. Please use \"set\" or \"reconf\" option ....")
             lines()
+            time.sleep(1)
             asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
             lines() #start from here
         if asking.lower() == 'set':
@@ -101,20 +102,22 @@ def Start():
            tp_conf()
     elif chifasso is None:
         print( " [Info] --> Your adapter \""+str(Intf)+"\" is connected to a network. ")
-        time.sleep(2)
+        time.sleep(1)
         print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
-        time.sleep(2)
+        time.sleep(1)
         asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
+        while asking.lower() != 'y' or asking.lower != 'n' or asking.lower() != 'yes' or asking.lower() != 'no':
+            print("[Warning] --> Invalid Entry, please use \"yes\" or \"no\" options...")
+            time.sleep(1)
+            asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             interct()
         elif asking.lower() == 'n' or asking.lower() == 'no':
-           print(" [Required] --> Please disconnect from the WiFi network then run the tool again to configure your adapter to Monitor mode - Bye bye :)  ")
+           print(" [Required] --> Please disconnect from the WiFi network - Exiting :)  ")
            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
-        else:
-          invalid()
     elif chwlan:
         usermd()
-def usermd():
+def usermd(): #start from here
     lines()
     sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
     lines()
