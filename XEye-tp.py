@@ -88,13 +88,16 @@ def Start():
         print("\n [Info] --> Your WiFi USB adapter is already set to Auto mode ")
         asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
         lines()
-        while asking.lower() != 'set' or asking.lower() != 'reconf':
+        while true:
             lines()
-            print(" [Warning] --> Invalid Entry. Please use \"set\" or \"reconf\" option ....")
-            lines()
-            time.sleep(1)
-            asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
-            lines() #start from here
+            if asking.lower() == 'set' or asking.lower() == 'reconf'
+                break
+            else:
+                print(" [Warning] --> Invalid Entry. Please use \"set\" or \"reconf\" option ....")
+                lines()
+                time.sleep(1)
+                asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
+                lines() #start from here
         if asking.lower() == 'set':
            print("[*] --> Please wait ...... ")
            tp_set()
