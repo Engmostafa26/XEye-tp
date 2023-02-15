@@ -475,10 +475,7 @@ def spoofing(ipt, ips, macc):
     sc.send(spacket,count=2,verbose=False)
 
 def invalid():
-    lines()
-    print(" [warning] --> Invalid entry, please use a yes or no answer, Exiting .....")
-    lines()
-    exit()
+    print(" [warning] --> Invalid entry, please try again .....")
 def deauth():
     Intff = getinterf()
     print("\n [Instruction] --> You need to run \"airodump-ng\" against the targeted network - Your adapter interface name is "+Intff)
