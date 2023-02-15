@@ -135,7 +135,7 @@ def Start():
         elif asking.lower() == 'n' or asking.lower() == 'no':
            print(" [Required] --> Please disconnect from the WiFi network - Exiting :)  ")
            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
-    elif chwlan:
+    elif chwlan: #start from here
         usermd()
 def usermd():
     lines()
