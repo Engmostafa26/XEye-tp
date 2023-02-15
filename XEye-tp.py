@@ -90,14 +90,14 @@ def Start():
         lines()
         while true:
             lines()
-            if asking.lower() == 'set' or asking.lower() == 'reconf'
+            if asking.lower() == 'set' or asking.lower() == 'reconf':
                 break
             else:
                 print(" [Warning] --> Invalid Entry. Please use \"set\" or \"reconf\" option ....")
                 lines()
                 time.sleep(1)
                 asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
-                lines() #start from here
+                lines()
         if asking.lower() == 'set':
            print("[*] --> Please wait ...... ")
            tp_set()
@@ -120,7 +120,7 @@ def Start():
            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
     elif chwlan:
         usermd()
-def usermd(): #start from here
+def usermd():
     lines()
     sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
     while sque.lower() != 'y' or sque.lower != 'n' or sque.lower() != 'yes' or sque.lower() != 'no':
