@@ -61,15 +61,37 @@ def Start():
         print("\n [Info] --> Your WiFi USB adapter is already set to Monitor mode ")
         Asking = input("\n [Mac Changer] --> Would like to change your adapter Mac address? [yes / no] ")
         lines()
+        while True:
+            if Asking.lower() == 'yes' or Asking.lower() == 'y' or Asking.lower() == 'no' or Asking.lower() == 'n':
+                break
+            else:
+                invalid()
+                time.sleep(1)
+                Asking = input("\n [Mac Changer] --> Would like to change your adapter Mac address? [yes / no] ")
+                
         if Asking.lower() == 'y' or Asking.lower() == 'yes':
             Usermd()
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             lines()
             askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
+            while True:
+                if askingg.lower() == 'yes' or askingg.lower() == 'y' or askingg.lower() == 'no' or askingg.lower() == 'n':
+                    break
+                else:
+                    invalid()
+                    time.sleep(1)
+                    askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
             if askingg.lower() == 'y' or askingg.lower() == 'yes':
                 deauth()
             elif askingg.lower() == 'n' or askingg.lower() == 'no':
                 defau = input("\n [Reset] --> If you want to reset your adapter, you just need to reboot your OS - Reboot now? [yes/no] ")
+                while True:
+                    if defau.lower() == 'yes' or defau.lower() == 'y' or defau.lower() == 'no' or defau.lower() == 'n':
+                        break
+                    else:
+                        invalid()
+                        time.sleep(1)
+                        defau = input("\n [Reset] --> If you want to reset your adapter, you just need to reboot your OS - Reboot now? [yes/no] ")             
                 if defau.lower() == 'yes' or defau.lower() == 'y':
                     print("\n [Attention] --> We are rebooting your OS in 20 seconds, you can cancel by pressing on the left \"ctrl+c\" ")
                     time.sleep(20)
@@ -77,12 +99,6 @@ def Start():
                 elif defau.lower() == 'no' or defau.lower() == 'n':
                     print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
                     TheEnd()
-                else:
-                    invalid()
-            else:
-              invalid()  
-        else:
-            invalid()
     elif chwlann:
         lines()
         print("\n [Info] --> Your WiFi USB adapter is already set to Auto mode ")
@@ -93,11 +109,9 @@ def Start():
             if asking.lower() == 'set' or asking.lower() == 'reconf':
                 break
             else:
-                print(" [Warning] --> Invalid Entry. Please use \"set\" or \"reconf\" option ....")
-                lines()
+                invalid()
                 time.sleep(1)
                 asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
-                lines()
         if asking.lower() == 'set':
            print("[*] --> Please wait ...... ")
            tp_set()
@@ -109,10 +123,13 @@ def Start():
         print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
         time.sleep(1)
         asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
-        while asking.lower() != 'y' or asking.lower != 'n' or asking.lower() != 'yes' or asking.lower() != 'no':
-            print("[Warning] --> Invalid Entry, please use \"yes\" or \"no\" options...")
-            time.sleep(1)
-            asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
+        while True:
+            if asking.lower() == 'yes' or asking.lower() == 'y' or asking.lower() == 'no' or asking.lower() == 'n':
+                break
+            else:
+                invalid()
+                time.sleep(1)
+                asking = input("\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             interct()
         elif asking.lower() == 'n' or asking.lower() == 'no':
