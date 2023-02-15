@@ -392,7 +392,7 @@ def getmac(interface):
         print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
         exit()
 def interct():
-    ipp = subprocess.getoutput("ip r |grep "+getinterf())
+    ipp = subprocess.getoutput("ip r |grep "+str(getinterf()))
     ipr = subprocess.getoutput(ipp+" | grep proto | cut -d\" \" -f1")
     ip = re.search(r"(?:\d{1,3}\.){3}\d{1,3}(?:/\d\d?)?", str(ipr))
     if ip is not None:
