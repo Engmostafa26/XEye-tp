@@ -317,7 +317,7 @@ def ChMac(Interface,Mac):
     subprocess.call(["ifconfig", Interface, "hw", "ether", Mac])
     subprocess.call(["iwconfig", Interface, "mode", "Monitor"])
     subprocess.call(["ifconfig", Interface, "up"])
-def getinterf():
+def getinterf(): #start from here
     interfs = subprocess.getoutput('iwconfig |grep WIFI@REALTEK')
     interfso = subprocess.getoutput('iwconfig |grep Access Point')
     interfsoo = subprocess.getoutput('iwconfig |grep eth')
