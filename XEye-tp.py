@@ -263,11 +263,11 @@ def tp_check():
             askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
             while True:
                 if askingg.lower() == 'yes' or askingg.lower() == 'y' or askingg.lower() == 'no' or askingg.lower() == 'n':
-                break
-            else:
-                invalid()
-                time.sleep(1)
-                askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
+                    break
+                else:
+                    invalid()
+                    time.sleep(1)
+                    askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
             if askingg.lower() == 'y' or askingg.lower() == 'yes':
                 deauth()
             elif askingg.lower() == 'n' or askingg.lower() == 'no':
