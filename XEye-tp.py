@@ -333,7 +333,7 @@ def getinterf():
     elif interff and enforc:
         print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
-    elif intero:
+    elif intero is not None:
         if nenforc:
             if intero.group(0) != nenforc.group(0):
                 asko = input("[Info] --> The WiFi interface "+str(intero.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
@@ -349,7 +349,7 @@ def getinterf():
                 elif asko.lower() == 'n' or asko.lower() == 'no':
                     print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
                     exit()
-    elif interoo: # start from here
+    elif interoo is not None: # start from here
         if nenforc:
             if interoo.group(0) != nenforc.group(0):
                 asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
