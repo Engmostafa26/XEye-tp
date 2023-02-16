@@ -135,62 +135,53 @@ def Start():
         elif asking.lower() == 'n' or asking.lower() == 'no':
            print(" [Required] --> Please disconnect from the WiFi network - Exiting :)  ")
            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
-    elif chwlan: #start from here
+    elif chwlan:
         usermd()
 def usermd():
     lines()
     sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
-    while sque.lower() != 'y' or sque.lower != 'n' or sque.lower() != 'yes' or sque.lower() != 'no':
-        print("[Warning] --> Invalid Entry, please use \"yes\" or \"no\" options...")
-        time.sleep(1)
-        sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
+    while True:
+        if sque.lower() == 'yes' or sque.lower() == 'y' or sque.lower() == 'no' or sque.lower() == 'n':
+            break
+        else:
+            invalid()
+            time.sleep(1)
+            sque= input("\n [Permission] --> Would you like to proceed? [yes / no] ")
     if sque.lower() == 'y' or sque.lower() == 'yes':
         tp_conf()
     elif sque.lower() == 'n' or sque.lower() == 'no':
         lines()
         print("\n [*] --> Thanks for using XEye-tp tool, Exiting .....\n")
         TheEnd()
-    else:
-        invalid()
-
 def tp_conf():
-    print("\n [*] --> Updating your system, please wait ....  \n")
-    lines()
+    print("\n [*][*][*] --> Updating your system, please wait ....  \n")
     subprocess.call(['apt', 'update', '-y'], stdout=subprocess.DEVNULL)
-    lines()
-    print("\n [*] --> Installing build-essentials, Please wait ....  \n")
-    lines()
+    print("\n [*][*][*] --> Installing build-essentials, Please wait ....  \n")
     subprocess.call(['apt', 'install', 'build-essential', '-y'], stdout=subprocess.DEVNULL)
-    lines()
-    print("\n [*] --> Installing bc, Won't take too long ....  \n")
-    lines()
+    print("\n [*][*][*] --> Installing bc, Won't take too long ....  \n")
     subprocess.call(['apt', 'install', 'bc', '-y'], stdout=subprocess.DEVNULL)
     lines()
-    print("\n [*] --> Removing \"r8188eu.ko module\"  \n")
+    print("\n [*][*][*] --> Removing \"r8188eu.ko module\"  \n")
     subprocess.call(['rmmod', 'r8188eu.ko'], stdout=subprocess.DEVNULL)
-    lines()
-    print("\n [*] --> Installing libelf-dev, Please wait ....  \n")
-    lines()
+    print("\n [*][*][*] --> Installing libelf-dev, Please wait ....  \n")
     subprocess.call(['apt', 'install', 'libelf-dev', '-y'], stdout=subprocess.DEVNULL)
     lines()
-    print("\n [*] --> Installing dkms, please wait ..... ")
+    print("\n [*][*][*] --> Installing dkms, please wait ..... ")
     subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
+    print("\n [*][*][*] --> Done installing dkms. proceeding further ....  \n")
+    time.sleep(2)
     lines()
-    print("\n [*] --> Done installing dkms. proceeding further ....  \n")
-    lines()
-    print("\n [*] --> Installing the required linux-headers, Please wait .....  \n")
-    lines()
+    print("\n [*][*][*] --> Installing the required linux-headers \n")
     subprocess.call("apt install linux-headers-$(uname -r)", shell=True)
     lines()
-    print("\n [*] --> Git cloning \"rtl8188eus\"  \n")
-    lines()
+    print("\n [*][*][*] --> Git cloning the required drivers, Please wait ....... \n")
     unamer = subprocess.check_output(['uname','-r'])
     unamerr = re.search(r"\d.\d\d", str(unamer))
     if unamerr is None:
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
         os.chdir("rtl8188eus")
         lines()
-        print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
+        #print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
         subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
         #subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
     elif unamerr.group(0) >= "5.15":
@@ -201,50 +192,46 @@ def tp_conf():
     else:
         subprocess.call(['git', 'clone', 'https://github.com/aircrack-ng/rtl8188eus'], stdout=subprocess.DEVNULL)
         os.chdir("rtl8188eus")
-        lines()
-        print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
+        #print("\n [*] --> Echoing \"blacklist r8188eu.ko\" to \"realtek.conf\"  \n")
         subprocess.call("echo \"blacklist r8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)
         subprocess.call("echo \"blacklist 8188eu.ko\" > \"/etc/modprobe.d/realtek.conf\"", shell=True)    
-    lines()
-    print("\n [*] --> Running Make command, Will take few minutes, please wait and ignore the upcoming errors and warnings ......  \n")
-    lines()
+    print("\n [*][*][*] --> Running Make command, Will take few minutes. Ignore the upcoming errors and warnings ......  \n")
+    time.sleep(3)
     subprocess.call(['make'], stdout=subprocess.DEVNULL)
-    lines()
-    print("\n [*] --> Running Make Install command  \n")
+    print("\n [*][*][*] --> Running \"Make Install\" command  \n")
     time.sleep(0.5)
     lines()
     subprocess.call(['make', 'install'], stdout=subprocess.DEVNULL)
-    lines()
     print("\n [*] --> Running \"modprobe 8188eu\"  \n")
     time.sleep(1)
-    lines()
     subprocess.call("modprobe 8188eu", shell=True)
     time.sleep(3)
     iwco = subprocess.check_output(['iwconfig'])
     Auto_check = re.search(r"Mode:Auto", str(iwco))
     if not Auto_check:
         lines()
-        print("\n [Warning] --> The WiFi adapter mode is not Auto or it is just missing, don't worry just follow the next instruction to bypass the restriction ")
-        print("\n [Info] --> It is normal to see such warnings from time to time as we are bypassing the restrictions on your adapter. ") 
+        print("\n [Warning] --> The WiFi adapter mode is not Auto or it is just missing, don't worry just follow the next instructions to bypass the restriction ")
+        print("\n [Info] --> It is normal to see such warnings from time to time as XEye-tp is trying to bypass the restrictions on your adapter. ")
         print(" [Instruction] --> UnPlug and plug in your WiFi USB adapter, WAIT FOR FEW SECONDS then run the tool again and XEye-tp will do the rest :)   \n")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
-        lines()
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/xEyecs")
         exit()
     if Auto_check is not None:
         lines()
         print("\n [Congrats] --> The WiFi USB adapter is successfully configured \n")
         asking = input("\n [Permission] --> Would you like to set your WiFi USB adapter to Monitor mode now?  [yes / no] ")
-        lines()
+        while True:
+            if asking.lower() == 'yes' or asking.lower() == 'y' or asking.lower() == 'no' or asking.lower() == 'n':
+                break
+            else:
+                invalid()
+                time.sleep(1)
+                asking = input("\n [Permission] --> Would you like to set your WiFi USB adapter to Monitor mode now?  [yes / no] ")
         if asking.lower() == 'y' or asking.lower() == 'yes':
             tp_set()
         elif asking.lower() == 'n' or asking.lower() == 'no':
             lines()
-            print("\n [Info] --> Now your adapter is just set to Auto mode - Bye Bye :) \n")
+            print("\n [Info] --> Now your adapter is just set to Auto mode - Exiting..... \n")
             TheEnd()
-        else:
-            lines()
-            print("\n [Warning] --> Invalid Entry. [Your interface is just set to Auto mode] - Exiting .....\n")
-            exit()
 def tp_set():
     interf = getinterf()
     subprocess.call(['sudo','ifconfig', interf, 'down'])
@@ -261,42 +248,57 @@ def tp_check():
     iwcon_Mcheck = re.search(r"Mode:Monitor",str(iwcon))
     if iwcon_Mcheck is not None:
         lines()
-        print("\n [Congrats] --> You WiFi USB adapter has been set to monitor mode :) :) \n")
-        Asking = input("\n [Asking] --> Would like to change your WiFi adapter Mac address? [yes / no] ")
+        print("\n [Congrats] --> You WiFi USB adapter has been set to monitor mode \n")
+        Asking = input("\n [Asking] --> Would you like to change your WiFi adapter Mac address? [yes / no] ")
+        while True:
+            if Asking.lower() == 'yes' or Asking.lower() == 'y' or Asking.lower() == 'no' or Asking.lower() == 'n':
+                break
+            else:
+                invalid()
+                time.sleep(1)
+                Asking = input("\n [Asking] --> Would you like to change your WiFi adapter Mac address? [yes / no] ")
         if Asking.lower() == 'y' or Asking.lower() == 'yes':
             Usermd()
         elif Asking.lower() == 'n' or Asking.lower() == 'no':
             askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
+            while True:
+                if askingg.lower() == 'yes' or askingg.lower() == 'y' or askingg.lower() == 'no' or askingg.lower() == 'n':
+                break
+            else:
+                invalid()
+                time.sleep(1)
+                askingg = input("\n [Deauth Attack] Would you like to perform deauthentication attack? [yes / no] ")
             if askingg.lower() == 'y' or askingg.lower() == 'yes':
                 deauth()
             elif askingg.lower() == 'n' or askingg.lower() == 'no':
                 lines()
-                print("\n [*] --> Thanks for using XEye-tp tool, Your WiFi Adapter \""+interff+"\" is just set to Monitor mode - Bye bye :) .....\n")
+                print("\n [*] --> Thanks for using XEye-tp tool, Your WiFi Adapter \""+interff+"\" is just set to Monitor mode - Exiting .....\n")
                 TheEnd()
-            else:
-              invalid()  
-        else:
-            invalid()
     else:
         lines()
         print("\n [Failure] --> Sorry :( , your WiFi USB could not be changed to monitor mode ")
-        print("\n [Instruction] --> 1) Run the tool again because it might be a technical issue was on your system. ")
-        print("\n [Instruction] --> 2) If the issue persists, simply upgrade and restart your system then run the tool again :) ")
-        print("\n [Instruction] --> 3) To upgrade your system, just run this command \"sudo apt upgrade -y\" \n ")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+        print("\n [Instructions]--> Please follow the below instructions: ")
+        print("\n\t\t\t[1] --> Run the tool again because it might be a technical issue was on your system. ")
+        print("\t\t\t[2] --> If the issue persists, simply upgrade and restart your system then run the tool again ")
+        print("\t\t\t [3] --> To upgrade your system, just run this command \"sudo apt upgrade -y\" \n ")
+        print(" \t\t\t[Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/xEyecs")
         exit()
 def Usermd():
     Interface = getinterf()
     lines()
-    Mac = input("\n        [Required] --> Enter the required Mac address: ")
-    if not Mac:
-        print(" \n [Warning] --> No Mac address specified. ")
-        print(" \n [Info] Now your adapter is just set to monitor mode - Bye bye .....")
-        TheEnd()
+    Mac = input("\n [Required] --> Enter the required Mac address: ")
     Macc1 = getmac(Interface)
-    if Macc1 == Mac:
-        print(" \n [Info] --> You just entered the same Mac address for " + Interface + ", please enter a different Mac address - Exiting ...... ")
-        exit()
+    while True:
+        if not Mac:
+            print(" \n [Warning] --> No Mac address was specified. ")
+            time.sleep(1)
+            Mac = input("\n [Required] --> Enter the required Mac address: ")
+        elif Macc1 == Mac:
+            print(" \n [Info] --> You just entered the same Mac address for " + Interface + ", please enter a different Mac address ")
+            time.sleep(1)
+            Mac = input("\n [Required] --> Enter the required Mac address: ")
+        else:
+            break
     ChMac(Interface, Mac)
     Macc2 = getmac(Interface)
     if (Macc2 == Mac) or (Macc1 != Macc2):
@@ -304,20 +306,17 @@ def Usermd():
         TheEnd()
     else:
         print(" [Warning] --> Something Went wrong, The Mac address couldn't change to "+Mac)
-        print("\n [Instruction] --> Enter a valid Mac address, or unplug then plug in you adapter, wait for few seconds then run the tool again - Bye bye :) ")
-        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+        print("\n [Instruction] --> Enter a valid Mac address, or unplug then plug in you adapter, wait for few seconds then run the tool again ")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/xEyecs")
         exit()
 
 def ChMac(Interface,Mac):
-    lines()
     print("\n [Info] --> XEye-tp is setting your " + Interface + " Mac address to " + Mac)
-    lines()
     subprocess.call(["ifconfig", Interface, "down"])
     subprocess.call(["iwconfig", Interface, "mode", "Auto"])
     subprocess.call(["ifconfig", Interface, "hw", "ether", Mac])
     subprocess.call(["iwconfig", Interface, "mode", "Monitor"])
     subprocess.call(["ifconfig", Interface, "up"])
-
 def getinterf():
     interfs = subprocess.getoutput('iwconfig |grep WIFI@REALTEK')
     interfso = subprocess.getoutput('iwconfig |grep Access Point')
@@ -332,7 +331,7 @@ def getinterf():
     elif interff and enforc:
         print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
-    elif intero:
+    elif intero and intero != str(r'eth\d*'):
         asko = input("[Info] --> The WiFi interface "+str(intero.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
         if asko.lower() == 'y' or asko.lower() == 'yes':
             return intero.group(0)
