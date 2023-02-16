@@ -335,7 +335,7 @@ def getinterf():
         return interff.group(0)
     elif intero:
         if nenforc:
-            if intero != nenforc.group(0):
+            if intero.group(0) != nenforc.group(0):
                 asko = input("[Info] --> The WiFi interface "+str(intero.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
                 while True:
                     if asko.lower() == 'yes' or asko.lower() == 'y' or asko.lower() == 'no' or asko.lower() == 'n':
@@ -351,7 +351,7 @@ def getinterf():
                     exit()
     elif interoo: # start from here
         if nenforc:
-            if interoo != nenforc.group(0):
+            if interoo.group(0) != nenforc.group(0):
                 asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
                 while True:
                     if asko.lower() == 'yes' or asko.lower() == 'y' or asko.lower() == 'no' or asko.lower() == 'n':
