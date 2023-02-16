@@ -335,10 +335,10 @@ def getinterf():
         return interff.group(0)
     elif intero:
         if nenforc:
-            if intero != nenforc:
+            if intero != nenforc.group(0):
                 asko = input("[Info] --> The WiFi interface "+str(intero.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
                 while True:
-                    if asko.lower() == 'yes' or aski.lower() == 'y' or aski.lower() == 'no' or aski.lower() == 'n':
+                    if asko.lower() == 'yes' or asko.lower() == 'y' or asko.lower() == 'no' or asko.lower() == 'n':
                         break
                     else:
                         invalid()
@@ -350,15 +350,21 @@ def getinterf():
                     print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
                     exit()
     elif interoo: # start from here
-        if str(interoo.group(0)) != "eth0": 
-            asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
-            if asko.lower() == 'y' or asko.lower() == 'yes':
-                return interoo.group(0)
-            elif asko.lower() == 'n' or asko.lower() == 'no':
-                print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
-                exit()
-            else:
-                invalid()
+        if nenforc:
+            if interoo != nenforc.group(0):
+                asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
+                while True:
+                    if asko.lower() == 'yes' or asko.lower() == 'y' or asko.lower() == 'no' or asko.lower() == 'n':
+                        break
+                    else:
+                        invalid()
+                        time.sleep(1)
+                        asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
+                if asko.lower() == 'y' or asko.lower() == 'yes':
+                    return intero.group(0)
+                elif asko.lower() == 'n' or asko.lower() == 'no':
+                    print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
+                    exit()
     else:
         lines()
         print(" [Warning] --> Couldn't detect a WiFi Adapter - please wait .......")
@@ -370,18 +376,25 @@ def getinterf():
             #subprocess.call(['sudo','apt', 'install', 'dkms', '-y'], stdout=subprocess.DEVNULL)
             #print("\n [Instruction] --> The dkms installation is finished, now your system needs to reboot so your adapter will be seen as a WiFi adapter .....")
             rebo = input("\n [Permission] --> Would you like to proceed? [yes/no] ")
+            while True:
+                if rebo.lower == 'yes' or rebo.lower == 'y' or rebo.lower == 'no' or rebo.lower == 'n':
+                    break
+                else:
+                    invalid()
+                    time.sleep(1)
+                    rebo = input("\n [Permission] --> Would you like to proceed? [yes/no] ")
             if rebo.lower() == 'yes' or rebo.lower() == 'y':
+                print("[Instruction] --> You might need to run the tool again as after XEye-tp configure your system to see the adapter")
+                time.sleep(3)
                 tp_conf()
                 #subprocess.call("reboot", shell=True)
             if rebo.lower() == 'no' or rebo.lower() == 'n':
                 print("\n [Info] --> Thanks for using XEye-tp - Exiting ..... ")
                 time.sleep(2)
                 exit()
-            else:
-                 invalid()
         else:
             print(" [Warning] --> Your TP-WN722N adapted is not seen by your system, please make sure that it is attached")
-            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/xEyecs")
             exit()
 def getmac(interface):
     ifconfgi_re = subprocess.check_output(["ifconfig", interface])
