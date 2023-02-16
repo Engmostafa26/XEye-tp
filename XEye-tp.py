@@ -320,27 +320,36 @@ def ChMac(Interface,Mac):
 def getinterf():
     interfs = subprocess.getoutput('iwconfig |grep WIFI@REALTEK')
     interfso = subprocess.getoutput('iwconfig |grep Access Point')
+    interfsoo = subprocess.getoutput('iwconfig |grep eth')
     intero = re.search(r"\w\w\w\w\d", str(interfso))
     interoo = re.search(r"\w\w\w\d", str(interfso))
     interf = re.search(r"\w\w\w\w\d", str(interfs))
     interff = re.search(r"\w\w\w\d", str(interfs))
     enforc = re.search(r"WIFI@REALTEK", str(interfs))
+    nenforc = re.search(r"eth\d*", str(interfsoo))
     if interf and enforc:
         print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return str(interf.group(0))
     elif interff and enforc:
         print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return interff.group(0)
-    elif intero and intero != str(r'eth\d*'):
-        asko = input("[Info] --> The WiFi interface "+str(intero.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
-        if asko.lower() == 'y' or asko.lower() == 'yes':
-            return intero.group(0)
-        elif asko.lower() == 'n' or asko.lower() == 'no':
-            print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
-            exit()
-        else:
-            invalid()
-    elif interoo:
+    elif intero:
+        if nenforc:
+            if intero != nenforc:
+                asko = input("[Info] --> The WiFi interface "+str(intero.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
+                while True:
+                    if asko.lower() == 'yes' or aski.lower() == 'y' or aski.lower() == 'no' or aski.lower() == 'n':
+                        break
+                    else:
+                        invalid()
+                        time.sleep(1)
+                        asko = input("[Info] --> The WiFi interface "+str(intero.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? [yes/no] ")
+                if asko.lower() == 'y' or asko.lower() == 'yes':
+                    return intero.group(0)
+                elif asko.lower() == 'n' or asko.lower() == 'no':
+                    print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
+                    exit()
+    elif interoo: # start from here
         if str(interoo.group(0)) != "eth0": 
             asko = input("[Info] --> The WiFi interface "+str(interoo.group(0))+" is detected which is not TP-Link WN722N, Would you like to proceed? ")
             if asko.lower() == 'y' or asko.lower() == 'yes':
