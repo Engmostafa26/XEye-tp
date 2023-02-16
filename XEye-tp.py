@@ -384,7 +384,7 @@ def getinterf():
                     time.sleep(1)
                     rebo = input("\n [Permission] --> Would you like to proceed? [yes/no] ")
             if rebo.lower() == 'yes' or rebo.lower() == 'y':
-                print("[Instruction] --> You might need to run the tool again as after XEye-tp configure your system to see the adapter")
+                print("[Instruction] --> You will need to run the tool again after XEye-tp configure your system to see the adapter")
                 time.sleep(3)
                 tp_conf()
                 #subprocess.call("reboot", shell=True)
