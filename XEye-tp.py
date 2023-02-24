@@ -10,7 +10,7 @@ def udte():
     chked = re.search(r"Already up to date", str(chupd))
     chkeds = re.search(r"actualizado", str(chupd))
     chkedi = re.search(r"Già aggiornato", str(chupd))
-    bupted = re.search(r"changed,", str(chupd))
+    bupted = re.search(r"changed,", str(chupd)) #here
     if chked or chkeds or chkedi:
         print("\n[Congrats] --> XEye-tp is up to date")
         time.sleep(1)
