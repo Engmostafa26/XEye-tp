@@ -9,8 +9,9 @@ def udte():
     chupd = subprocess.check_output(['git','pull'])
     chked = re.search(r"Already up to date", str(chupd))
     chkeds = re.search(r"actualizado", str(chupd))
+    chkedi = re.search(r"Già aggiornato", str(chupd))
     bupted = re.search(r"changed,", str(chupd))
-    if chked or chkeds:
+    if chked or chkeds or chkedi:
         print("\n[Congrats] --> XEye-tp is up to date")
         time.sleep(1)
         print("[Warning] --> We are updating XEye-tp for better performance and more hacking features, if you need help please send us a msg on \"https://fb.com/xeyecs\" .... ")
