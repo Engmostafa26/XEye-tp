@@ -47,7 +47,7 @@ def Checkroot():
 def Start():
     print("\n\n\t\t\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
-    print("\t\tXEye-tp is made with love by XEye Cybercecurity company and developed by ENG.Mostafa Ahmad ")
+    print("[Important] --> ❤️ For high-quality and engaging Courses[Coupon Code]: \"FEBXEYE23\" --> \"https://www.udemy.com/user/mostafa-ahmad-abdelmobdy/\" ❤️ ")
     print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" ")
     time.sleep(1)
     Intf = getinterf() #issue needs to be fixed here.
@@ -520,6 +520,7 @@ def TheEnd():
     time.sleep(2)
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
     time.sleep(3)
+    print("[Important] --> ❤️ For high-quality and engaging Courses[Coupon Code]: \"FEBXEYE23\" --> \"https://www.udemy.com/user/mostafa-ahmad-abdelmobdy/\" ❤️ ")
     print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
     exit()
 Checkroot()
