@@ -47,7 +47,9 @@ def Checkroot():
 def Start():
     print("\n\n\t\t\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
+    time.sleep(2)
     print("[Important] --> ❤️ For high-quality and engaging Courses[Coupon Code]: \"FEBXEYE23\" --> \"https://www.udemy.com/user/mostafa-ahmad-abdelmobdy/\" ❤️ ")
+    time.sleep(2)
     print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" ")
     time.sleep(1)
     Intf = getinterf() #issue needs to be fixed here.
@@ -417,6 +419,9 @@ def interct():
     ipp = subprocess.getoutput("ip r |grep "+str(getinterf()))
     ipr = subprocess.getoutput(ipp+" | grep proto | cut -d\" \" -f1")
     ip = re.search(r"(?:\d{1,3}\.){3}\d{1,3}(?:/\d\d?)?", str(ipr))
+    time.sleep(2)
+    print("[Important] --> ❤️ For high-quality and engaging Courses[Coupon Code]: \"FEBXEYE23\" --> \"https://www.udemy.com/user/mostafa-ahmad-abdelmobdy/\" ❤️ ")
+    time.sleep(2)
     if ip is not None:
         print(" [Info] --> Scanning your network \"" + ip.group(0) + "\", please wait ......")
         scanning(ip.group(0))
