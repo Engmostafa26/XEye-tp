@@ -48,7 +48,7 @@ def Start():
     print("\n\n\t\t\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
     time.sleep(2)
-    print("[Important] --> ❤️❤️❤️ For high-quality and engaging Courses[Coupon Code]: \"FEBXEYE23\" --> \"https://www.udemy.com/user/mostafa-ahmad-abdelmobdy/\" ❤️❤️❤️ ")
+    print("\n\t\t[Important] --> ❤️❤️❤️ For HD and engaging Courses[Coupon Code]: \"FEBXEYE23\" --> \"https://www.udemy.com/user/mostafa-ahmad-abdelmobdy/\" ❤️❤️❤️ ")
     time.sleep(2)
     print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" ")
     time.sleep(1)
