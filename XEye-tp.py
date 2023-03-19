@@ -107,7 +107,7 @@ def Start():
         print("\n [Info] --> Your WiFi USB adapter is already set to Auto mode ")
         asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
         lines()
-        while true:
+        while True:
             lines()
             if asking.lower() == 'set' or asking.lower() == 'reconf':
                 break
