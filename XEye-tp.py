@@ -39,7 +39,7 @@ def getinterf():
                     print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
                     exit()
             else:
-                print("[Warning] --> No Wifi Adatper is attached - Please make sure that is attached or seen by your system - Exiting ....")
+                print("[Warning] --> No Wifi Adatper is attached - Please make sure that a Wifi adapter is attached or seen by your system - Exiting ....")
                 time.sleep(1)
                 print("\n [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/XEyecs")
                 exit()
@@ -60,7 +60,7 @@ def getinterf():
                     print("[Info] --> Non of your adapters changed to Monitor mode by XEye-tp - Exiting ......")
                     exit()
             else:
-                print("[Warning] --> No Wifi Adatper is attached - Please make sure that is attached or seen by your system - Exiting ....")
+                print("[Warning] --> No Wifi Adatper is attached - Please make sure that a WiFi adapter is attached or seen by your system - Exiting ....")
                 time.sleep(1)
                 print("\n [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/XEyecs")
                 exit()
