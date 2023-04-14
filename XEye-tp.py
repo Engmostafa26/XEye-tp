@@ -3,8 +3,8 @@
 import subprocess, os, re, time
 import scapy.all as sc
 
-print("[Warning] --> XEye is currently being updated, apologies if it is not functioning properly, it will soon :) ")
-time.sleep(5)
+#print("[Warning] --> XEye is currently being updated, apologies if it is not functioning properly, it will soon :) ")
+#time.sleep(5)
 
 def getinterf():
     interfs = subprocess.getoutput('iwconfig |grep WIFI@REALTEK')
