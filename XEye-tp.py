@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 # XEye-tp is only developed by Mostafa Ahmad, The XEye(XEyecs.com) founder, Cybersecurity Expert and Senior Penetration Tester.
-print("XEye is currently being updated, apologies if it is not functioning properly, it will soon :) ")
 import subprocess, os, re, time
 import scapy.all as sc
-time.sleep(2)
+print("[Warning] --> XEye is currently being updated, apologies if it is not functioning properly, it will soon :) ")
+time.sleep(5)
 def udte():
     print("\n[Info] --> Checking for updates, please wait .....\n\n")
     time.sleep(1)
