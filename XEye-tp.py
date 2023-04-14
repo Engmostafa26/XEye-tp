@@ -4,7 +4,7 @@ import subprocess, os, re, time
 import scapy.all as sc
 
 #print("[Warning] --> XEye is currently being updated, apologies if it is not functioning properly, it will soon :) ")
-#time.sleep(5)
+time.sleep(5)
 
 def getinterf():
     interfs = subprocess.getoutput('iwconfig |grep WIFI@REALTEK')
@@ -205,19 +205,16 @@ def Start():
                         defau = input(
                             "\n [Reset] --> If you want to reset your adapter, you just need to reboot your OS - Reboot now? [yes/no] ")
                 if defau.lower() == 'yes' or defau.lower() == 'y':
-                    print(
-                        "\n [Attention] --> We are rebooting your OS in 20 seconds, you can cancel by pressing on the left \"ctrl+c\" ")
+                    print("\n [Attention] --> We are rebooting your OS in 20 seconds, you can cancel by pressing on the left \"ctrl+c\" ")
                     time.sleep(20)
                     subprocess.call("sudo reboot", shell=True)
                 elif defau.lower() == 'no' or defau.lower() == 'n':
-                    print(
-                        "\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
+                    print("\n [*] --> Thanks for using XEye-tp tool, Your Adapter is just set to Monitor mode - Bye bye .....\n")
                     TheEnd()
     elif chwlann:
         lines()
         print("\n [Info] --> Your WiFi USB adapter is already set to Auto mode ")
-        asking = input(
-            " [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
+        asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
         lines()
         while True:
             lines()
@@ -226,8 +223,7 @@ def Start():
             else:
                 invalid()
                 time.sleep(1)
-                asking = input(
-                    " [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
+                asking = input(" [Permission] --> Would you like to set your WiFi USB adapter to \"Monitor mode now\" or \"reconfigure\"?  [set / reconf] ")
         if asking.lower() == 'set':
             print("[*] --> Please wait ...... ")
             tp_set()
@@ -236,8 +232,7 @@ def Start():
     elif chifasso is None:
         print(" [Info] --> Your adapter \"" + str(Intf) + "\" is connected to a network. ")
         time.sleep(1)
-        print(
-            " [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
+        print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
         time.sleep(1)
         asking = input(
             "\n [Permission] --> Would you like to grab the mac addresses of the devices on the network? [yes/no] ")
@@ -253,8 +248,7 @@ def Start():
             interct()
         elif asking.lower() == 'n' or asking.lower() == 'no':
             print(" [Required] --> Please disconnect from the WiFi network - Exiting :)  ")
-            print(
-                " [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
+            print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/xEyecs")
     elif chwlan:
         usermd()
 
@@ -433,8 +427,7 @@ def Usermd():
             time.sleep(1)
             Mac = input("\n [Required] --> Enter the required Mac address: ")
         elif Macc1 == Mac:
-            print(
-                " \n [Info] --> You just entered the same Mac address for " + Interface + ", please enter a different Mac address ")
+            print(" \n [Info] --> You just entered the same Mac address for " + Interface + ", please enter a different Mac address ")
             time.sleep(1)
             Mac = input("\n [Required] --> Enter the required Mac address: ")
         else:
@@ -599,8 +592,7 @@ def deauth():
         dumbi = input("\n [Waiting] --> Enter any value and press Enter when you are ready: ")
         if dumbi:
             # packno = input(" [Required] --> Please enter the number of the deauthentication packets to be sent to the target: ")
-            print(
-                "\n [Info] --> the attack is in action, if you want to stop the attack please press on the left \"ctrl+c\" buttons \n\n\n")
+            print("\n [Info] --> the attack is in action, if you want to stop the attack please press on the left \"ctrl+c\" buttons \n\n\n")
             time.sleep(2)
             subprocess.call(['sudo', 'aireplay-ng', '--deauth', '100000000000000', '-a', routmac, '-c', climac, Intff])
 
