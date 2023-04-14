@@ -41,7 +41,7 @@ def getinterf():
             else:
                 print("[Warning] --> No Wifi Adatper is attached - Please make sure that is attached or seen by your system - Exiting ....")
                 time.sleep(1)
-                print("\n [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/xEyecs")
+                print("\n [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/XEyecs")
                 exit()
     elif interoo:
         if nenforc:
@@ -62,7 +62,7 @@ def getinterf():
             else:
                 print("[Warning] --> No Wifi Adatper is attached - Please make sure that is attached or seen by your system - Exiting ....")
                 time.sleep(1)
-                print("\n [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/xEyecs")
+                print("\n [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://fb.com/XEyecs")
                 exit()
     else:
         lines()
@@ -122,7 +122,7 @@ def udte():
     if chked or chkeds or chkedi:
         print("\n[Congrats] --> XEye-tp is up to date")
         time.sleep(1)
-        print("[Warning] --> We are updating XEye-tp for better performance and more hacking features, if you need help please send us a msg on \"https://fb.com/XEyecs\" .... ")
+        print("[Warning] --> We regularly update XEye-tp for better performance and more hacking features, if you need help please send us a msg on \"https://fb.com/XEyecs\" .... ")
         time.sleep(3)
     else:
         print("\n[Info] --> XEye-tp will be updated, please wait ...... \n")
