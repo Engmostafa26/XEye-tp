@@ -14,9 +14,10 @@ def getinterf():
     interoo = re.search(r"\w\w\w\d", str(interfso))
     interf = re.search(r"\w\w\w\w\d", str(interfs))
     interff = re.search(r"\w\w\w\d", str(interfs))
+    #nodocker = re.search(r"docker\d",
     enforc = re.search(r"WIFI@REALTEK", str(interfs))
     nenforc = re.search(r"eth\d*\d", str(interfsoo))
-    if interf and enforc:
+    if interf and and enforc:
         print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return str(interf.group(0))
     elif interff and enforc:
@@ -166,6 +167,7 @@ def Start():
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
     chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
     chifasso = re.search(r"unassociated", str(ifconfig_outp))
+    chifassoo = re.search(r"docker\d",str(ifconfig_outp))
     if chwlannn:
         lines()
         print("\n [Info] --> Your WiFi USB adapter is already set to Monitor mode ")
@@ -229,7 +231,7 @@ def Start():
             tp_set()
         elif asking.lower() == 'reconf':
             tp_conf()
-    elif chifasso is None:
+    elif chifasso is None and chifassoo is None:
         print(" [Info] --> Your adapter \"" + str(Intf) + "\" is connected to a network. ")
         time.sleep(1)
         print(" [Assistance] --> If you need any further assistance, please contact us on our Facebook page: https://facebook.com/XEyecs")
