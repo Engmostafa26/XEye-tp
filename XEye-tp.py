@@ -167,7 +167,7 @@ def Start():
     chwlann = re.search(r"Mode:Auto", str(ifconfig_outp))
     chwlannn = re.search(r"Mode:Monitor", str(ifconfig_outp))
     chifasso = re.search(r"unassociated", str(ifconfig_outp))
-    chifassoo = re.search(r"docker\d",str(ifconfig_outp))
+    chifassoo = re.search(r"cker\d",str(ifconfig_outp))
     if chwlannn:
         lines()
         print("\n [Info] --> Your WiFi USB adapter is already set to Monitor mode ")
