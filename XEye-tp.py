@@ -17,7 +17,7 @@ def getinterf():
     #nodocker = re.search(r"docker\d",
     enforc = re.search(r"WIFI@REALTEK", str(interfs))
     nenforc = re.search(r"eth\d*\d", str(interfsoo))
-    if interf and and enforc:
+    if interf and enforc:
         print("[Info] --> A TP-Link USB WIFI adapter is detected ")
         return str(interf.group(0))
     elif interff and enforc:
