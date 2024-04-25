@@ -6,4 +6,4 @@ The tool runs with python version 3 and it needs to run with root user not with 
 
 Example: python3 XEye-tp.py
 
-Made by [XEye Academy](academy.XEyecs.com) for Educational Purposes only.
+Made by [XEye Academy](https://academy.XEyecs.com) for Educational Purposes only.
