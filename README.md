@@ -5,3 +5,5 @@ XEye-tp tool made it easy, just run the tool and in few minutes or seconds your 
 The tool runs with python version 3 and it needs to run with root user not with sudo.
 
 Example: python3 XEye-tp.py
+
+Made by [XEye Academy](academy.XEyecs.com) for Educational Purposes only.
