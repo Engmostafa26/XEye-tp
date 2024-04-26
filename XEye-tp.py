@@ -1,9 +1,8 @@
 #! /usr/bin/env python3
-# XEye-tp is only developed by Mostafa Ahmad, The XEye(XEyecs.com) founder, Cybersecurity Expert and Senior Penetration Tester.
+# XEye-tp is only developed by XEye Academy --> https://academy.XEyecs.com
 import subprocess, os, re, time
 import scapy.all as sc
 
-#print("[Warning] --> XEye is currently being updated, apologies if it is not functioning properly, it will soon :) ")
 time.sleep(5)
 
 def getinterf():
@@ -156,7 +155,7 @@ def Start():
     print("\n\n\t\t\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
     time.sleep(2)
-    print("\n\t\t[Important] --> ❤️❤️❤️ To advance in your IT career, contact XEye Academy through \"https://XEyecs.com/academy\" ❤️❤️❤️ ")
+    print("\n\t\t[Important] --> ❤️❤️❤️ To advance in your IT career, visit XEye Academy through \"https://academy.XEyecs.com/" ❤️❤️❤️ ")
     time.sleep(2)
     print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" to learn more ")
     time.sleep(1)
