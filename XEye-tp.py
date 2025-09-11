@@ -155,7 +155,7 @@ def Start():
     print("\n\n\t\t\t\t\t******XEye******XEye******XEye******XEye******XEye******XEye******XEye******\n")
     print("\t\t\t\t\t\t\t\t [Welcoming] --> Welcome to XEye-tp :) ")
     time.sleep(2)
-    print("\n\t\t[Important] --> ❤️❤️❤️ To advance in your IT career, visit XEye Academy through \"https://academy.XEyecs.com/" ❤️❤️❤️ ")
+    print("\n\t\t[Important] --> ❤️❤️❤️ To advance in your IT career, visit XEye Academy through \"https://academy.XEyecs.com/\" ❤️❤️❤️ ")
     time.sleep(2)
     print("\tSubscribe to XEye YT channel: \"https://www.youtube.com/c/XEyecs\" to learn more ")
     time.sleep(1)
