@@ -608,7 +608,7 @@ def TheEnd():
     print("\n [Recommendation] --> Run the \"exit\" command to exit the root shell, and stay secure :) ")
     time.sleep(3)
     print("\t\t\t\t❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ")
-    print("[Important] --> ❤️ If you want to advance in your Cybersecurity and Information Security career, Contact XEye Academy through \"https://academy.XEyecs.com/" ❤️ ")
+    print("[Important] --> ❤️ If you want to advance in your Cybersecurity and Information Security career, Contact XEye Academy through \"https://academy.XEyecs.com/\" ❤️ ")
     print("[XEye Academy] --> Pass any exam certificate, advance in your career with XEye Academy trainers ")
     print("[XEye Academy] --> XEye Academy trainers are certified, highly experienced and skilled")
     print("[XEye Academy] --> XEye Academy onsite, live and recorded trainings are highly practical with special dedicated and sophisticated labs ")
